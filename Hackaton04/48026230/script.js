@@ -101,7 +101,7 @@ const concatenarDatos = () => {
     const apellido = prompt("Ingrese su apellido:");
     const edad = parseInt(prompt("Ingrese su edad:"));
 
-    const mensaje = `Hola, mi nombre es ${nombre} ${apellido} y mi edad ${edad}`;
+    const mensaje = `Hola, mi nombre es ${nombre} ${apellido} y mi edad es ${edad}`;
     alert(mensaje);
 
     return mensaje;
@@ -158,3 +158,4 @@ function sumar(...numeros) {
     alert(`La suma de los números es: ${suma}`);
     return suma;
 }
+/* 5) Crear una función que reciba un array de valores y filtre los valores que no son string */
