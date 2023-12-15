@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackaton 03 SV60071292</title>
+</head>
+<body>
+    
+    <button type="button" onclick="calcularSumaPares();">Calcular Suma de Pares</button>
+
+    <script>
+        function calcularSumaPares() {
+            // Inicializar la suma a cero
+            let suma = 0;
+
+            // Calcular la suma de los números pares hasta 1000
+            for (let i = 2; i <= 1000; i += 2) {
+                suma += i;
+            }
+
+            // Mostrar el resultado
+            alert("La suma de los números pares hasta 1000 es: " + suma);
+        }
+    </script>
+</body>
+</html>

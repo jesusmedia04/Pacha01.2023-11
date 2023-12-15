@@ -1,0 +1,1 @@
+//Hacer un algoritmo en JavaScript para conseguir el M.C.D de un número por medio del algoritmo de Euclides

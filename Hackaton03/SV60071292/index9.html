@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackaton 03 SV60071292</title>
+</head>
+<body>
+    
+    <button type="button" onclick="calcularNuevoSalario();">Calcular Nuevo Salario</button>
+
+    <script>
+        function calcularNuevoSalario() {
+            // Definir variables
+            let salario, nuevoSalario;
+
+            // Solicitar al usuario ingresar el salario actual
+            salario = parseFloat(prompt("Ingrese el salario actual del trabajador:"));
+
+            // Determinar el aumento según el salario actual
+            if (salario > 2000) {
+                nuevoSalario = salario * 1.05; // Aumento del 5%
+            } else {
+                nuevoSalario = salario * 1.10; // Aumento del 10%
+            }
+
+            // Mostrar el nuevo salario
+            alert(`El nuevo salario del trabajador es: $${nuevoSalario}`);
+        }
+    </script>
+</body>
+</html>

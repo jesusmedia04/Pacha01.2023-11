@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackaton 03 SV60071292</title>
+</head>
+<body>
+    
+    <button type="button" onclick="calcularVenta();">Calcular Venta</button>
+
+    <script>
+        function calcularVenta() {
+            // Definir variables
+            let cantidadCDs, precioUnitario, precioTotal, gananciaVendedor;
+
+            // Solicitar al usuario ingresar la cantidad de CDs a vender
+            cantidadCDs = parseInt(prompt("Ingrese la cantidad de CDs a vender:"));
+
+            // Determinar el precio unitario según la cantidad
+            if (cantidadCDs <= 9) {
+                precioUnitario = 10;
+            } else if (cantidadCDs <= 99) {
+                precioUnitario = 8;
+            } else if (cantidadCDs <= 499) {
+                precioUnitario = 7;
+            } else {
+                precioUnitario = 6;
+            }
+
+            // Calcular el precio total para el cliente
+            precioTotal = cantidadCDs * precioUnitario;
+
+            // Calcular la ganancia para el vendedor
+            gananciaVendedor = 0.0825 * precioTotal;
+
+            // Mostrar resultados
+            alert(`Precio total para el cliente: $${precioTotal}\nGanancia para el vendedor: $${gananciaVendedor}`);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackaton 03 SV60071292</title>
+</head>
+<body>
+    
+    <button type="button" onclick="calcularPago();">Calcular Pago</button>
+
+    <script>
+        function calcularPago() {
+            // Definir variables
+            let idEmpleado, diasTrabajados, salarioDiario, totalPago;
+
+            // Solicitar al usuario ingresar el número identificador del empleado
+            idEmpleado = parseInt(prompt("Ingrese el número identificador del empleado (1: Cajero, 2: Servidor, 3: Preparador de mezclas, 4: Mantenimiento):"));
+
+            // Solicitar al usuario ingresar la cantidad de días trabajados
+            diasTrabajados = parseInt(prompt("Ingrese la cantidad de días trabajados (1 a 6):"));
+
+            // Asignar el salario diario según el tipo de empleado
+            switch (idEmpleado) {
+                case 1:
+                    salarioDiario = 56;
+                    break;
+                case 2:
+                    salarioDiario = 64;
+                    break;
+                case 3:
+                    salarioDiario = 80;
+                    break;
+                case 4:
+                    salarioDiario = 48;
+                    break;
+                default:
+                    alert("Número de empleado no válido");
+                    return; // Salir de la función si el número de empleado no es válido
+            }
+
+            // Calcular el total a pagar
+            totalPago = salarioDiario * diasTrabajados;
+
+            // Mostrar el resultado
+            alert(`El empleado con identificador ${idEmpleado} debe recibir $${totalPago} por ${diasTrabajados} días trabajados.`);
+        }
+    </script>
+</body>
+</html>

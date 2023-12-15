@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackaton 03 SV60071292</title>
+</head>
+<body>
+
+    <button onclick="calcularSuma()">Calcular Suma</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcularSuma() {
+            // Definir variables
+            let suma = 0;
+
+            // Calcular la suma de los primeros cien números con un ciclo Para
+            for (let i = 1; i <= 100; i++) {
+                suma += i;
+            }
+
+            // Mostrar el resultado
+            document.getElementById("resultado").innerText = "La suma de los primeros cien números es: " + suma;
+        }
+    </script>
+
+</body>
+</html>

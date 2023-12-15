@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackaton 03 SV60071292</title>
+</head>
+<body>
+    
+    <button type="button" onclick="incrementarTiempo();">Incrementar Tiempo</button>
+
+    <script>
+        function incrementarTiempo() {
+            // Definir variables
+            let hora, minuto, segundo;
+
+            // Solicitar al usuario ingresar la hora, minuto y segundo
+            hora = parseInt(prompt("Ingrese la hora:"));
+            minuto = parseInt(prompt("Ingrese el minuto:"));
+            segundo = parseInt(prompt("Ingrese el segundo:"));
+
+            // Incrementar el segundo
+            segundo = segundo + 1;
+
+            // Ajustar los valores si es necesario
+            if (segundo >= 60) {
+                segundo = 0;
+                minuto = minuto + 1;
+
+                if (minuto >= 60) {
+                    minuto = 0;
+                    hora = hora + 1;
+                }
+            }
+
+            // Mostrar el resultado
+            alert(`Nuevo tiempo: ${hora}:${minuto}:${segundo}`);
+        }
+    </script>
+</body>
+</html>

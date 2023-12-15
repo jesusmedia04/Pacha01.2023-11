@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackaton 03 SV60071292</title>
+</head>
+<body>
+    
+    <button type="button" onclick="determinarVocal();">Determinar Vocal</button>
+
+    <script>
+        function determinarVocal() {
+            // Definir variable
+            let letra;
+
+            // Solicitar al usuario ingresar una letra
+            letra = prompt("Ingrese una letra:").toLowerCase(); // Convertir la letra a minúscula para simplificar la comparación
+
+            // Determinar si la letra es una vocal
+            if (letra === "a" || letra === "e" || letra === "i" || letra === "o" || letra === "u") {
+                alert("La letra ingresada es una vocal.");
+            } else {
+                alert("La letra ingresada no es una vocal.");
+            }
+        }
+    </script>
+</body>
+</html>

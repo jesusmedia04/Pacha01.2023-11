@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackaton-03 SV73615397</title>
+</head>
+<body>
+    <details>
+        <summary>Ejercicio 01</summary>
+        <div>
+            <p>Hacer un algoritmo en JavaScript que lea un número por el teclado y determinar si tiene tres dígitos.</p>
+            <label for="ej1num">Ingrese un número:</label>
+            <input type="number" step="1" id="ej1num" name="ej1num"><br><br>
+            <button type="button" onclick="ejercicio01();">Es de 3 dígitos?</button>
+        </div>
+    </details>
+    <details>
+        <summary>Ejercicio 02</summary>
+        <div>
+            <p>Hacer un algoritmo en JavaScript que lea un número entero por el teclado y determinar si es negativo.</p>
+            <label for="ej2num">Ingrese un número:</label>
+            <input type="number" step="1" id="ej2num" name="ej2num"><br><br>
+            <button type="button" onclick="ejercicio02();">Es negativo?</button>
+        </div>
+    </details>
+    <details>
+        <summary>Ejercicio 03</summary>
+        <div>
+            <p>Hacer un algoritmo en JavaScript que lea un número y determinar si termina en 4.</p>
+            <label for="ej3num">Ingrese un número:</label>
+            <input type="number" step="1" id="ej3num" name="ej3num"><br><br>
+            <button type="button" onclick="ejercicio03();">Termina en la cifra 4</button>
+        </div>
+    </details>
+    <details>
+        <summary>Ejercicio 04</summary>
+        <div>
+            <p>Hacer un algoritmo en JavaScript que lea tres números enteros y los muestre de menor a mayor.</p>
+            <button type="button" onclick="ejercicio04();">Probar</button>
+        </div>
+    </details>
+    <details>
+        <summary>Ejercicio 05</summary>
+        <div>
+            Hacer un algoritmo en JavaScript para una tienda de zapatos que tiene una promoción de descuento para vender al mayor, 
+            esta dependerá del número de zapatos que se compren. Si son más de diez, se les dará un 10% de descuento sobre el total de la compra; 
+            si el número de zapatos es mayor de veinte pero menor de treinta, se le otorga un 20% de descuento; 
+            y si son más treinta zapatos se otorgará un 40% de descuento. El precio de cada zapato es de $80.
+            <br>
+            <br>
+            <label for="ej5num">Ingrese el número de zapatos a comprar:</label>
+            <input type="number" step="1" id="ej5num" name="ej5num"><br><br>
+            <button type="button" onclick="ejercicio05();">Comprar!</button>
+        </div>
+    </details>
+    <details>
+        <summary>Ejercicio 06</summary>
+        <div>
+            <p>Hacer un algoritmo en JavaScript para ayudar a un trabajador a saber cuál será su sueldo semanal, se sabe que si trabaja 40 horas o menos, se le pagará $20 por hora, pero si trabaja más de 40 horas entonces las horas extras se le pagarán a $25 por hora.</p>
+            <br>
+            <br>
+            <label for="ej6num">Ingrese horas trabajadas en la semana:</label>
+            <input type="number" step="1" id="ej6num" name="ej6num"><br><br>
+            <button type="button" onclick="ejercicio06();">Calcular Sueldo</button>
+        </div>
+    </details>
+    <details>
+        <summary>Ejercicio 07</summary>
+        <div>
+            Hacer un algoritmo en JavaScript para una tienda de helado que da un descuento por compra a sus clientes con membresía dependiendo de su tipo, sólo existen tres tipos de membresía, tipo A, tipo B y tipo C. Los descuentos son los siguientes:
+            <ul>
+                <li>Tipo A 10% de descuento</li>
+                <li>Tipo B 15% de descuento</li>
+                <li>Tipo C 20% de descuento</li>
+            </ul>
+            <br>
+            <label for="ej7txt">Ingrese el tipo de membresía [A,B,C]:</label>
+            <input type="text" id="ej7txt" name="ej7txt"><br><br>
+            <button type="button" onclick="ejercicio07();">Calcular descuento</button>
+        </div>
+    </details>
+    <details>
+        <summary>Ejercicio 08</summary>
+        <div>
+            Hacer un algoritmo en JavaScript para calcular el promedio de tres notas y determinar si el estudiante aprobó o no.
+            <br>
+            <br>
+            <button type="button" onclick="ejercicio08();">Probar</button>
+        </div>
+    </details>
+    <details>
+        <summary>Ejercicio 09</summary>
+        <div>
+            Hacer un algoritmo en JavaScript para determinar el aumento de un trabajador, se debe tomar en cuenta que si ganaba más de $2000 tendrá un aumento del 5%, si generaba menos de $2000 su aumento será de un 10%.
+            <br>
+            <br>
+            <label for="ej9num">Ingrese el sueldo que ganaba:</label>
+            <input type="number" step="1" id="ej9num" name="ej9num"><br><br>
+            <button type="button" onclick="ejercicio09();">Calcular aumento</button>
+        </div>
+    </details>
+    <details>
+        <summary>Ejercicio 10</summary>
+        <div>
+            Hacer un algoritmo en JavaScript que diga si un número es par o impar.
+            <br>
+            <br>
+            <label for="ej10num">Ingrese un número:</label>
+            <input type="number" step="1" id="ej10num" name="ej10num"><br><br>
+            <button type="button" onclick="ejercicio10();">Es par?</button>
+        </div>
+    </details>
+    <details>
+        <summary>Ejercicio 11</summary>
+        <div>
+            Hacer un algoritmo en JavaScript que lea tres números y diga cuál es el mayor.
+            <br>
+            <br>
+            <button type="button" onclick="ejercicio11();">Probar</button>
+        </div>
+    </details>
+    <details>
+        <summary>Ejercicio 12</summary>
+        <div>
+            Hacer un algoritmo en JavaScript que lea dos números y diga cuál es el mayor.
+            <br>
+            <br>
+            <button type="button" onclick="ejercicio12();">Probar</button>
+        </div>
+    </details>
+    <details>
+        <summary>Ejercicio 13</summary>
+        <div>
+            Hacer un algoritmo en JavaScript que lea una letra y diga si es una vocal.
+            <br>
+            <br>
+            <label for="ej13txt">Ingrese una letra:</label>
+            <input type="text" id="ej13txt" name="ej13txt"><br><br>
+            <button type="button" onclick="ejercicio13();">Es vocal?</button>
+        </div>
+    </details>
+    <details>
+        <summary>Ejercicio 14</summary>
+        <div>
+            Hacer un algoritmo en JavaScript que lea un entero positivo del 1 al diez y al 9 y determine si es un número primo. (Pendiente) <br>
+            <label for="ej14num">Ingrese un número:</label>
+            <input type="number" step="1" id="ej14num" name="ej14num"><br>
+            <button type="button" onclick="ejercicio14();">Es primo?</button>
+        </div>
+    </details>
+    <details>
+        <summary>Ejercicio 15</summary>
+        <div>
+            Hacer un algoritmo en JavaScript que convierta centímetros a pulgadas y libras a kilogramos.
+            <br>
+            <button type="button" onclick="ejercicio15();">Probar</button>
+        </div>
+    </details>
+    <details>
+        <summary>Ejercicio 16</summary>
+        <div>
+            Hacer un algoritmo en JavaScript que lea un número y según ese número, indique el día que corresponde. <br>
+            <label for="ej16num">Ingrese un número:</label>
+            <input type="number" step="1" id="ej16num" name="ej16num"><br>
+            <button type="button" onclick="ejercicio16();">qué día es?</button>
+        </div>
+    </details>
+    <details>
+        <summary>Ejercicio 17</summary>
+        <div>
+            Hacer un algoritmo en JavaScript donde se ingrese una hora y nos calcule la hora dentro de un segundo.
+            <br>
+            <button type="button" onclick="ejercicio17();">Probar</button>
+        </div>
+    </details>
+    <details>
+        <summary>Ejercicio 18</summary>
+        <div>
+            <p>Hacer un algoritmo en JavaScript para una empresa se encarga de la venta y distribución de CD vírgenes. Los clientes pueden adquirir los artículos (supongamos un único producto de una única marca) por cantidad. Los precios son:</p>
+            <ul>
+                <li>$10. Si se compran unidades separadas hasta 9.</li>
+
+                <li>$8. Si se compran entre 10 unidades hasta 99.</li>
+
+                <li>$7. Entre 100 y 499 unidades.</li>
+
+                <li>$6. Para mas de 500 unidades.</li>
+            </ul>
+            <p>La ganancia para el vendedor es de 8,25 % de la venta. Realizar un algoritmo en JavaScript que dado un número de CDs a vender calcule el precio total para el cliente y la ganancia para el vendedor.</p>
+            <label for="ej18num">Ingrese un número de CD's a separar:</label>
+            <input type="number" step="1" id="ej18num" name="ej18num"><br>
+            <button type="button" onclick="ejercicio18();">cuanto costará?</button>
+        </div>
+    </details>
+    <details>
+        <summary>Ejercicio 19</summary>
+        <div>
+            Hacer un algoritmo en JavaScript para una heladería se tienen 4 tipos de empleados ordenados de la siguiente forma con su número identificador y salario diario correspondiente:
+            <ul>
+                <li>Cajero (56$/día).</li>
+                <li>Servidor (64$/día).</li>
+                <li>Preparador de mezclas (80$/día).</li>
+                <li>Mantenimiento (48$/día).</li>
+            </ul>
+            El dueño de la tienda desea tener un programa donde sólo ingrese dos números enteros que representen al número identificador del empleado y la cantidad de días que trabajó en la semana (6 días máximos). Y el programa le mostrará por pantalla la cantidad de dinero que el dueño le debe pagar al empleado que ingresó
+            <br>
+            <button type="button" onclick="ejercicio19();">Probar</button>
+        </div>
+    </details>
+    <details>
+        <summary>Ejercicio 20</summary>
+        <div>
+            Hacer un algoritmo en JavaScript que que lea 4 números enteros positivos y verifique y realice las siguientes operaciones:
+            <ul>
+                <li>¿Cuántos números son Pares?</li>
+                <li>¿Cuál es el mayor de todos?</li>
+                <li>Si el tercero es par, calcular el cuadrado del segundo.</li>
+                <li>Si el primero es menor que el cuarto, calcular la media de los 4 números.</li>
+                <li>Si el segundo es mayor que el tercero, verificar si el tercero esta comprendido entre los valores 50 y 700. Si cumple se cumple la segunda condición, calcular la suma de los 4 números.</li>
+            </ul>
+            <br>
+            <button type="button" onclick="ejercicio20();">Probar</button>
+        </div>
+    </details>
+    <details>
+        <summary>Ejercicio 21</summary>
+        <div>
+            <p>Hacer un algoritmo en JavaScript que permita calcular el factorial de un número.</p>
+            <label for="ej21um">Ingrese un número:</label>
+            <input type="number" step="1" id="ej21num" name="ej21num"><br>
+            <button type="button" onclick="ejercicio21();">Factorial</button>
+        </div>
+    </details>
+    <details>
+        <summary>Ejercicio 22</summary>
+        <div>
+            <p>Hacer un algoritmo en JavaScript para calcular la suma de los n primeros números.</p>
+            <label for="ej22num">Ingrese la cantidad de números a sumar:</label>
+            <input type="number" step="1" id="ej22num" name="ej22num"><br>
+            <button type="button" onclick="ejercicio22();">Sumar</button>
+        </div>
+    </details>
+    <details>
+        <summary>Ejercicio 23</summary>
+        <div>
+            <p>Hacer un algoritmo en JavaScript para calcular la suma de los números impares menores o iguales a n.</p>
+            <label for="ej23num">Ingrese hasta que número sumar los impares:</label>
+            <input type="number" step="1" id="ej23num" name="ej23num"><br>
+            <button type="button" onclick="ejercicio23();">Sumar</button>
+        </div>
+    </details>
+    <details>
+        <summary>Ejercicio 24</summary>
+        <p>Hacer un algoritmo en JavaScript para realizar la suma de todos los números pares hasta el 1000.</p>
+        <button type="button" onclick="ejercicio24();">Probar</button>
+    </details>
+    <details>
+        <summary>Ejercicio 25</summary>
+        <p>Hacer un algoritmo en JavaScript para calcular el factorial de un número de una forma distinta.</p>
+        <label for="ej25num">Ingrese un número:</label>
+        <input type="number" step="1" id="ej25num" name="ej25num"><br>
+        <button type="button" onclick="ejercicio25();">Factorial</button>
+    </details>
+    <details>
+        <summary>Ejercicio 26</summary>
+        <p>Hacer un algoritmo en JavaScript para calcular el resto y cociente por medio de restas sucesivas.</p>
+        <button type="button" onclick="ejercicio26();">Probar</button>
+    </details>
+    <details>
+        <summary>Ejercicio 27</summary>
+        <p>Hacer un algoritmo en JavaScript para determinar la media de una lista indefinida de números positivos, se debe acabar el programa al ingresar un número negativo.</p>
+        <button type="button" onclick="ejercicio27();">Probar</button>
+    </details>
+    <details>
+        <summary>Ejercicio 28</summary>
+        <p>Hacer un algoritmo en JavaScript para calcular la suma de los primeros cien números con un ciclo repetir.</p>
+        <button type="button" onclick="ejercicio28();">Probar</button>
+    </details>
+    <details>
+        <summary>Ejercicio 29</summary>
+        <p>Hacer un algoritmo en JavaScript para calcular la suma de los primeros cien números con un ciclo mientras.</p>
+        <button type="button" onclick="ejercicio29();">Probar</button>
+    </details>
+    <details>
+        <summary>Ejercicio 30</summary>
+        <p>Hacer un algoritmo en JavaScript para calcular la suma de los primeros cien números con un ciclo para.</p>
+        <button type="button" onclick="ejercicio30();">Probar</button>
+    </details>
+    <details>
+        <summary>Ejercicio 31</summary>
+        <p>Hacer un algoritmo en JavaScript parar calcular la media de los números pares e impares, sólo se ingresará diez números.</p>
+        <button type="button" onclick="ejercicio31();">Probar</button>
+    </details>
+    <details>
+        <summary>Ejercicio 32</summary>
+        <p>Hacer un algoritmo en JavaScript que permita al usuario continuar con el programa.</p>
+        <button type="button" onclick="ejercicio32();">Probar</button>
+    </details>
+    <details>
+        <summary>Ejercicio 33</summary>
+        <p>Hacer un algoritmo en JavaScript que imprima la tabla de multiplicar de los números del uno nueve.</p>
+        <button type="button" onclick="ejercicio33();">Probar</button>
+        <ul id="tablasMultiplicar"></ul>
+    </details>
+    <details>
+        <summary>Ejercicio 34</summary>
+        <p>Hacer un algoritmo en JavaScript que nos permita saber cuál es el número mayor y menor, se debe ingresar sólo 20 números.</p>
+        <button type="button" onclick="ejercicio34();">Probar</button>
+    </details>
+    <details>
+        <summary>Ejercicio 35</summary>
+        <p>Hacer un algoritmo en JavaScript para calcular la serie de Fibonacci.</p>
+        <label for="ej35num">Ingrese la cantidad de números de la serie fibonacci:</label>
+        <input type="number" step="1" id="ej35num" name="ej35num"><br>
+        <p id="resultadoFibonacci"></p>
+        <button type="button" onclick="ejercicio35();">mostrar</button>
+    </details>
+    <details>
+        <summary>Ejercicio 36</summary>
+        <p>Hacer un algoritmo en JavaScript para conseguir el M.C.D de un número por medio del algoritmo de Euclides.</p>
+        <button type="button" onclick="ejercicio36();">Probar</button>
+    </details>
+    <details>
+        <summary>Ejercicio 37</summary>
+        <p>Hacer un algoritmo en JavaScript que nos permita saber si un número es un número perfecto.</p>
+        <label for="ej37num">Ingrese un número:</label>
+        <input type="number" step="1" id="ej37num" name="ej37num"><br>
+        <button type="button" onclick="ejercicio37();">Es perfecto?</button>
+    </details>
+
+    <script src="script.js"></script>
+</body>
+</html>

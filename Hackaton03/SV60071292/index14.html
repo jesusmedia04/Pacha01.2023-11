@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackaton 03 SV60071292</title>
+</head>
+<body>
+    
+    <button type="button" onclick="verificarNumeroEspecial();">Verificar Número Especial</button>
+
+    <script>
+        function verificarNumeroEspecial() {
+            // Definir variable
+            let numero;
+
+            // Solicitar al usuario ingresar un entero positivo del 1 al 10
+            numero = parseInt(prompt("Ingrese un entero positivo del 1 al 10:"));
+
+            // Verificar si el número es 9 y mostrar un mensaje especial
+            if (numero === 9) {
+                alert("¡El número 9 es un caso especial!\nEl número 9 no es primo, pero es un cuadrado mágico.");
+            } else {
+                // Verificar si el número es primo
+                if (numero === 2 || numero === 3 || numero === 5 || numero === 7) {
+                    alert("El número ingresado es primo.");
+                } else {
+                    alert("El número ingresado no es primo.");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

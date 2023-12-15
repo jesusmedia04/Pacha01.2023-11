@@ -1,0 +1,8 @@
+/*-  ¿Hasta cuantos argumentos puedes declarar en una función?
+
+En JavaScript, no hay un límite estricto en la cantidad de argumentos 
+que puedes declarar en una función. Puedes tener cualquier cantidad de 
+parámetros, pero es recomendable mantener la cantidad razonable para mantener 
+la legibilidad del código.
+
+*/

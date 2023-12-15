@@ -1,6 +1,6 @@
 Proceso Ejercicio5
 	
-//	Hacer un algoritmo en Pseint para una tienda de zapatos que tiene una promoción de descuento para vender al mayor, esta dependerá del número de zapatos que se compren. Si son más de diez, se les dará un 10% de descuento sobre el total de la compra; si el número de zapatos es mayor de veinte pero menor de treinta, se le otorga un 20% de descuento; y si son más treinta zapatos se otorgará un 40% de descuento. El precio de cada zapato es de $80.
+//	Hacer un algoritmo en Pseint para una tienda de zapatos que tiene una promociï¿½n de descuento para vender al mayor, esta dependerï¿½ del nï¿½mero de zapatos que se compren. Si son mï¿½s de diez, se les darï¿½ un 10% de descuento sobre el total de la compra; si el nï¿½mero de zapatos es mayor de veinte pero menor de treinta, se le otorga un 20% de descuento; y si son mï¿½s treinta zapatos se otorgarï¿½ un 40% de descuento. El precio de cada zapato es de $80.
 	
 		// Definir variables
 		Definir cantidadZapatos Como Entero
@@ -18,7 +18,7 @@ Proceso Ejercicio5
 		// Calcular el total de la compra
 		totalCompra <- cantidadZapatos * precioPorZapato
 		
-		// Calcular el descuento según la cantidad de zapatos
+		// Calcular el descuento segï¿½n la cantidad de zapatos
 		Si cantidadZapatos > 30 Entonces
 			descuento <- 0.4 * totalCompra
 		Sino 

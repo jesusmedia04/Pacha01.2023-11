@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackaton 03 SV60071292</title>
+</head>
+<body>
+
+    <label for="numInput">Ingrese el número:</label>
+    <input type="number" id="numInput" />
+
+    <button onclick="verificarNumeroPerfecto()">Verificar</button>
+
+    <script>
+        function verificarNumeroPerfecto() {
+            let num = parseInt(document.getElementById("numInput").value);
+            let sumaDivisores = 0;
+
+            // Validar que se haya ingresado un número
+            if (isNaN(num)) {
+                alert("Por favor, ingrese un número válido.");
+                return;
+            }
+
+            // Calcular la suma de los divisores
+            for (let i = 1; i <= num / 2; i++) {
+                if (num % i === 0) {
+                    sumaDivisores += i;
+                }
+            }
+
+            // Verificar si es un número perfecto y mostrar el resultado
+            if (sumaDivisores === num) {
+                alert("El número ingresado es un número perfecto.");
+            } else {
+                alert("El número ingresado no es un número perfecto.");
+            }
+        }
+    </script>
+
+</body>
+</html>

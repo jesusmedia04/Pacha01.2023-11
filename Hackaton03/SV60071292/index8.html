@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackaton 03 SV60071292</title>
+</head>
+<body>
+    
+    <button type="button" onclick="calcularPromedio();">Calcular Promedio</button>
+
+    <script>
+        function calcularPromedio() {
+            // Definir variables
+            let nota1, nota2, nota3, promedio;
+
+            // Solicitar al usuario ingresar las tres notas
+            nota1 = parseFloat(prompt("Ingrese la primera nota:"));
+            nota2 = parseFloat(prompt("Ingrese la segunda nota:"));
+            nota3 = parseFloat(prompt("Ingrese la tercera nota:"));
+
+            // Calcular el promedio
+            promedio = (nota1 + nota2 + nota3) / 3;
+
+            // Evaluar aprobación
+            if (promedio >= 6) {
+                alert(`El estudiante aprobó con un promedio de: ${promedio}`);
+            } else {
+                alert(`El estudiante no aprobó con un promedio de: ${promedio}`);
+            }
+        }
+    </script>
+</body>
+</html>

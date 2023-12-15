@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackaton 03 SV60071292</title>
+</head>
+<body>
+    
+    <label for="numeroInput">Ingrese un número para calcular su factorial:</label>
+    <input type="number" id="numeroInput" />
+    <button type="button" onclick="calcularFactorial();">Calcular Factorial</button>
+
+    <script>
+        function calcularFactorial() {
+            // Obtener el valor del input
+            let numero = parseInt(document.getElementById("numeroInput").value);
+
+            // Validar que se haya ingresado un número
+            if (isNaN(numero)) {
+                alert("Por favor, ingrese un número válido.");
+                return;
+            }
+
+            // Inicializar el factorial a 1
+            let factorial = 1;
+            let i = 1;
+
+            // Calcular el factorial usando un bucle Mientras
+            while (i <= numero) {
+                factorial *= i;
+                i++;
+            }
+
+            // Mostrar el resultado
+            alert("El factorial de " + numero + " es: " + factorial);
+        }
+    </script>
+</body>
+</html>

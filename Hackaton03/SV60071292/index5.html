@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackaton 03 SV60071292</title>
+</head>
+<body>
+    
+    <button type="button" onclick="calcularDescuento();">Calcular Descuento</button>
+
+    <script>
+        function calcularDescuento() {
+            // Definir variables
+            let cantidadZapatos;
+            let precioPorZapato = 80.0;
+            let totalCompra, descuento, totalConDescuento;
+
+            // Solicitar al usuario ingresar la cantidad de zapatos
+            cantidadZapatos = parseInt(prompt("Ingrese la cantidad de zapatos que desea comprar:"));
+
+            // Calcular el total de la compra
+            totalCompra = cantidadZapatos * precioPorZapato;
+
+            // Calcular el descuento según la cantidad de zapatos
+            if (cantidadZapatos > 30) {
+                descuento = 0.4 * totalCompra;
+            } else if (cantidadZapatos > 20) {
+                descuento = 0.2 * totalCompra;
+            } else if (cantidadZapatos > 10) {
+                descuento = 0.1 * totalCompra;
+            } else {
+                descuento = 0; // No hay descuento si la cantidad es 10 o menos
+            }
+
+            // Calcular el total con descuento
+            totalConDescuento = totalCompra - descuento;
+
+            // Mostrar los resultados
+            alert(`Cantidad de zapatos: ${cantidadZapatos}\nTotal de la compra: $${totalCompra}\nDescuento aplicado: $${descuento}\nTotal con descuento: $${totalConDescuento}`);
+        }
+    </script>
+</body>
+</html>

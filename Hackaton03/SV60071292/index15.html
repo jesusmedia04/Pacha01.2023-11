@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackaton 03 SV60071292</title>
+</head>
+<body>
+    
+    <button type="button" onclick="conversionUnidades();">Realizar Conversión</button>
+
+    <script>
+        function conversionUnidades() {
+            // Definir variables
+            let centimetros, pulgadas, libras, kilogramos;
+
+            // Solicitar al usuario ingresar las cantidades
+            centimetros = parseFloat(prompt("Ingrese la cantidad en centímetros:"));
+            libras = parseFloat(prompt("Ingrese la cantidad en libras:"));
+
+            // Convertir centímetros a pulgadas y libras a kilogramos
+            pulgadas = centimetros * 0.393701;
+            kilogramos = libras * 0.453592;
+
+            // Mostrar los resultados
+            alert("Equivalente en pulgadas: " + pulgadas + "\nEquivalente en kilogramos: " + kilogramos);
+        }
+    </script>
+</body>
+</html>

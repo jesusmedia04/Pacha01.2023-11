@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackaton 03 SV60071292</title>
+</head>
+<body>
+    
+    <button type="button" onclick="calcularDescuento();">Calcular Descuento</button>
+
+    <script>
+        function calcularDescuento() {
+            // Definir variables
+            let tipoMembresia;
+            let totalCompra, descuento, totalConDescuento;
+
+            // Solicitar al usuario ingresar el tipo de membresía
+            tipoMembresia = prompt("Ingrese el tipo de membresía (A, B o C): ").toUpperCase();
+
+            // Solicitar al usuario ingresar el total de la compra
+            totalCompra = parseFloat(prompt("Ingrese el total de la compra:"));
+
+            // Calcular el descuento según el tipo de membresía
+            switch (tipoMembresia) {
+                case "A":
+                    descuento = 0.10 * totalCompra;
+                    break;
+                case "B":
+                    descuento = 0.15 * totalCompra;
+                    break;
+                case "C":
+                    descuento = 0.20 * totalCompra;
+                    break;
+                default:
+                    alert("Tipo de membresía no válido.");
+                    return; // Salir de la función si el tipo de membresía no es válido
+            }
+
+            // Calcular el total con descuento
+            totalConDescuento = totalCompra - descuento;
+
+            // Mostrar los resultados
+            alert(`Total de la compra: $${totalCompra}\nDescuento aplicado: $${descuento}\nTotal con descuento: $${totalConDescuento}`);
+        }
+    </script>
+</body>
+</html>

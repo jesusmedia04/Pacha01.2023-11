@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackaton 03 SV60071292</title>
+</head>
+<body>
+
+    <form id="myForm">
+        <label for="eleccionInput">Desea continuar con el programa? (S/N):</label>
+        <input type="text" id="eleccionInput" maxlength="1" />
+        <button type="button" onclick="verificarEleccion();">Continuar</button>
+    </form>
+
+    <script>
+        function verificarEleccion() {
+            // Obtener el valor del input
+            let eleccion = document.getElementById("eleccionInput").value.toUpperCase();
+
+            // Verificar si la elección es "N"
+            if (eleccion !== "N") {
+                // Mostrar un mensaje al usuario
+                alert("El programa continuará.");
+
+                // Limpiar el input para la siguiente elección
+                document.getElementById("eleccionInput").value = "";
+            } else {
+                // Mostrar un mensaje al usuario
+                alert("Fin del programa.");
+            }
+        }
+    </script>
+
+</body>
+</html>

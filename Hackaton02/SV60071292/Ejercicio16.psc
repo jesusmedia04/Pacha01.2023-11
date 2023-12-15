@@ -1,32 +1,32 @@
 Proceso Ejercicio16
 	
-//	Hacer un algoritmo en Pseint que lea un número y según ese número, indique el día que corresponde.
+//	Hacer un algoritmo en Pseint que lea un nï¿½mero y segï¿½n ese nï¿½mero, indique el dï¿½a que corresponde.
 	
 		// Definir variable
 		Definir numeroDia Como Entero
 		
-		// Solicitar al usuario ingresar un número
-		Escribir "Ingrese un número del 1 al 7: "
+		// Solicitar al usuario ingresar un nï¿½mero
+		Escribir "Ingrese un nï¿½mero del 1 al 7: "
 		Leer numeroDia
 		
-		// Evaluar el número para determinar el día
+		// Evaluar el nï¿½mero para determinar el dï¿½a
 		Segun numeroDia Hacer
 				Caso 1:
 				Escribir "Lunes"
 				Caso 2:
 				Escribir "Martes"
 				Caso 3:
-				Escribir "Miércoles"
+				Escribir "Miï¿½rcoles"
 				Caso 4:
 				Escribir "Jueves"
 				Caso 5:
 				Escribir "Viernes"
 				Caso 6:
-				Escribir "Sábado"
+				Escribir "Sï¿½bado"
 				Caso 7:
 				Escribir "Domingo"
 			    De Otro Modo: 
-				Escribir "Número no válido. Ingrese un número del 1 al 7."
+				Escribir "Nï¿½mero no vï¿½lido. Ingrese un nï¿½mero del 1 al 7."
 		FinSegun
 		
 FinProceso

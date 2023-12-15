@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackaton-04 SV73615397</title>
+</head>
+<body>
+    <h1>RETO 01</h1>
+   <details>
+    <summary> Ejercicio 01</summary>
+    <p>Crea una función que retorne la suma de dos números.</p>
+    <p><label for="ej1num1">Ingrese un número 1:</label></p>
+    <p><input type="number" step="1" id="ej1num1" name="ej1num1"></p>
+    <p><label for="ej1num2">Ingrese un número 2:</label></p>
+    <p><input type="number" step="1" id="ej1num2" name="ej1num2"></p>
+    <div>
+        <button onclick="ejercicio01()">Sumar</button>
+    </div>
+   </details>
+   <details>
+    <summary> Ejercicio 02</summary>
+    <p>Crea una función que retorne la potencia de un número dado, esta función deberá recibir la potencia y el número a potenciar.</p>
+    <p><label for="ej2num1">Ingrese el exponenete:</label></p>
+    <p><input type="number" step="1" id="ej2num1" name="ej2num1"></p>
+    <p><label for="ej2num2">Ingrese la base:</label></p>
+    <p><input type="number" step="1" id="ej2num2" name="ej2num2" value="1"></p>
+    <div>
+        <button onclick="ejercicio02()">Potencia</button>
+    </div>
+   </details>
+   <details>
+    <summary> Ejercicio 03</summary>
+    <p>Crea una función que tome números y devuelva la suma de sus cubos. sumOfCubes(1, 5, 9) ➞ 855 // Since 1^3 + 5^3 + 9^3 = 1 + 125 + 729 = 855</p>
+    <div>
+        <button onclick="ejercicio03()">Sumar cubos</button>
+    </div>
+   </details>
+   <details>
+    <summary> Ejercicio 04</summary>
+    <p>Crea una función que retorne la potencia de un número dado, esta función deberá recibir la potencia y el número a potenciar.</p>
+    <p><label for="ej4num1">Ingrese la altura:</label></p>
+    <p><input type="number" step="1" id="ej4num1" name="ej4num1"></p>
+    <p><label for="ej4num2">Ingrese la base:</label></p>
+    <p><input type="number" step="1" id="ej4num2" name="ej4num2"></p>
+    <div>
+        <button onclick="ejercicio04()">área</button>
+    </div>
+   </details>
+   <details>
+    <summary>Ejercicio 05</summary>
+    <p>Crea una función llamada calculator que recibe 3 parámetros, dos números y una operación matemática (+,-,/,x,%), y si la operación no es correcta que envié un mensaje “El parámetro no es reconocido” calculator(2,"+", 2) ➞ 4</p>
+    <div>
+        <button onclick="ejercicio05()">Calculdora</button>
+    </div>
+   </details>
+   <p>¿Cómo defines una función?</p>
+   <p>Podemos definirlo declarando el bloque function(params){//codigo} o usando la expresión const myFunction = (params)=>{//codigo}</p>
+   <p>¿Hasta cuantos argumentos puedes declarar en una función?</p>
+   <p>No hay un limite como tal, pero es recomendable no hacer más de las necesarias, ya que una cantidad excesiva de argumentos dificultaría la lectura de nuestro código.</p>
+    <script src="script.js"></script>
+</body>
+</html>

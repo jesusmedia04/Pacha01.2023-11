@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackaton 03 SV60071292</title>
+</head>
+<body>
+    
+    <label for="numeroInput">Ingrese un número (ingrese un número negativo para finalizar):</label>
+    <input type="number" id="numeroInput" />
+    <button type="button" onclick="calcularMedia();">Calcular Media</button>
+
+    <script>
+        function calcularMedia() {
+            let suma = 0;
+            let contador = 0;
+
+            // Obtener el valor del input
+            let numero = parseFloat(document.getElementById("numeroInput").value);
+
+            // Procesar números hasta que se ingrese un número negativo
+            while (numero >= 0) {
+                suma += numero;
+                contador++;
+
+                // Solicitar otro número
+                numero = parseFloat(prompt("Ingrese otro número (ingrese un número negativo para finalizar): "));
+            }
+
+            // Calcular y mostrar la media si se ingresaron números positivos
+            if (contador > 0) {
+                alert("La media de los números positivos es: " + (suma / contador));
+            } else {
+                alert("No se ingresaron números positivos.");
+            }
+        }
+    </script>
+</body>
+</html>

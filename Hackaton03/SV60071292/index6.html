@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackaton 03 SV60071292</title>
+</head>
+<body>
+    
+    <button type="button" onclick="calcularSueldo();">Calcular Sueldo</button>
+
+    <script>
+        function calcularSueldo() {
+            // Definir variables
+            let horasTrabajadas, sueldo;
+            const tarifaNormal = 20;
+            const tarifaExtra = 25;
+
+            // Solicitar al usuario ingresar las horas trabajadas
+            horasTrabajadas = parseFloat(prompt("Ingrese las horas trabajadas:"));
+
+            // Calcular el sueldo
+            if (horasTrabajadas <= 40) {
+                sueldo = horasTrabajadas * tarifaNormal;
+            } else {
+                sueldo = 40 * tarifaNormal + (horasTrabajadas - 40) * tarifaExtra;
+            }
+
+            // Mostrar el sueldo
+            alert(`El sueldo semanal es: $${sueldo}`);
+        }
+    </script>
+</body>
+</html>

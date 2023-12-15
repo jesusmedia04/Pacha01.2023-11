@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackaton 03 SV60071292</title>
+</head>
+<body>
+    
+    <button type="button" onclick="mostrarDiaSemana();">Mostrar Día de la Semana</button>
+
+    <script>
+        function mostrarDiaSemana() {
+            // Definir variable
+            let numeroDia;
+
+            // Solicitar al usuario ingresar un número
+            numeroDia = parseInt(prompt("Ingrese un número del 1 al 7:"));
+
+            // Evaluar el número para determinar el día
+            switch (numeroDia) {
+                case 1:
+                    alert("Lunes");
+                    break;
+                case 2:
+                    alert("Martes");
+                    break;
+                case 3:
+                    alert("Miércoles");
+                    break;
+                case 4:
+                    alert("Jueves");
+                    break;
+                case 5:
+                    alert("Viernes");
+                    break;
+                case 6:
+                    alert("Sábado");
+                    break;
+                case 7:
+                    alert("Domingo");
+                    break;
+                default:
+                    alert("Número no válido. Ingrese un número del 1 al 7.");
+            }
+        }
+    </script>
+</body>
+</html>
