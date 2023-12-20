@@ -1,0 +1,12 @@
+---
+import FormCrearReparacion from "../components/FormCrearReparacion";
+import FormCrearTecnico from "../components/FormCrearTecnico";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Guardar Reparacion">
+  <main class="w-full h-screen grid place-items-center py-4">
+    <FormCrearReparacion client:only="react" />
+    
+  </main>
+</Layout>

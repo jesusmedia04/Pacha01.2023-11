@@ -11,3 +11,4 @@ alert(obtenerTipoValor(undefined)); // Devolverá "undefined"
 alert(obtenerTipoValor({})); // Devolverá "object"
 alert(obtenerTipoValor([])); // Devolverá "object"
 alert(obtenerTipoValor(function() {})); // Devolverá "function"
+

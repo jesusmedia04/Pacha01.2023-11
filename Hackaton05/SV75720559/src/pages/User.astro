@@ -1,0 +1,25 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+
+<Layout title="Sección de usuario">
+  <main class="bg-gray-900 text-white min-h-screen font-sans flex flex-col items-center justify-center">
+    <div class="text-center mb-12">
+      <h1 class="text-5xl font-bold mb-4">Bienvenido a DOCTOR CELL</h1>
+      <h2 class="text-2xl">El mejor en Reparaciones</h2>
+    </div>
+    <div class="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-16">
+      <div class="flex-shrink-0">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvTJeE5tXsefKkdqg8xZg2jao3rZO0me-26A&usqp=CAU" class="rounded-full w-48 h-48 border-4 border-white shadow-lg" alt="Profile" />
+      </div>
+      <div class="flex flex-col items-center space-y-6">
+        <a class="bg-gray-700 flex flex-row py-4 px-4 w-[200px] rounded-2xl text-white uppercase font-medium shadow-2xl hover:bg-slate-500 hover:text-white justify-center" href="/IngresarEquipo">Reparar Equipo</a>
+        <a class="bg-gray-700 flex flex-row py-4 px-4 w-[200px] rounded-2xl text-white uppercase font-medium shadow-2xl hover:bg-slate-500 hover:text-white justify-center" href="/buscar">Buscar Equipo</a>
+        <a class="bg-gray-700 flex flex-row py-4 px-4 w-[200px] rounded-2xl text-white uppercase font-medium shadow-2xl hover:bg-slate-500 hover:text-white justify-center" href="/crear">Agregar Técnico</a>
+        <a class="bg-gray-700 flex flex-row py-4 px-4 w-[200px] rounded-2xl text-white uppercase font-medium shadow-2xl hover:bg-slate-500 hover:text-white justify-center" href="/Tecnicos">Lista de Técnicos</a>
+        
+      </div>
+    </div>
+  </main>
+</Layout>

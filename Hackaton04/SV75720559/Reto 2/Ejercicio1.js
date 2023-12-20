@@ -1,7 +1,6 @@
-function concatenarDatos(nombre, apellido, edad) {
-    return `Hola mi nombre es ${nombre} ${apellido} y mi edad ${edad}`;
+function saludar(nombre, apellido, edad) {
+    return `Hola mi nombre es ${nombre} ${apellido} y mi edad es ${edad}`;
 }
 
-
-const mensaje = concatenarDatos('Sebastian', 'Yabiku', 33);
+const mensaje = saludar('Sebastian', 'Yabiku', 33);
 alert(mensaje);

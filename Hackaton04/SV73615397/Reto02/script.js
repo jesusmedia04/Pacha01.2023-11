@@ -156,7 +156,7 @@ function ejercicio08() {
     let arrays = [];
     let currentArray = [];
     while(true){
-        n = prompt(`Ingresa el N°${count+1}, para el array N°${countArrays+1}\nArray actual:[${currentArray}] \nArray de arrays:[${arrays}] \n(para detener el programa escriba 'n', para un nuevo array ingrese un negativo):`);
+        n = prompt(`Ingresa el N°${count+1}, para el array N°${countArrays+1}\nArray actual:[${currentArray}] \nArray de arrays:[${arrays}] \n(para detener el programa escriba 'stop', para un nuevo array ingrese un negativo):`);
         if(!isNaN(n)&&n>=0){
             currentArray.push(n);
             count++;
@@ -310,28 +310,21 @@ function ejercicio16() {
 }
 
 function ejercicio17() {
-    const diffMaxMin = (args) => {
-        let nMax = args[0];
-        let nMin = args[0];
-        for(let i=0;i<args.length;i++){
-            if(args[i]>nMax){
-                nMax = args[i];
-            }else{
-                nMin = args[i];
-            }
-        }
-        return [nMax,nMin,(nMax-nMin)];
+    const diffMaxMin = (arr) => {
+        const max = Math.max(...arr);
+        const min = Math.min(...arr);
+        return [max,min,(max-min)];
       };
     let n = 0;
     let numeros = [];
     while(!isNaN(n)){
         n = prompt(`Ingrese el N°${numeros.length+1} (para salir ingrese cualquier caracter no númerico):`);
-        if(!isNaN(n)){
+        if(!isNaN(n) & n.length>0){
             numeros.push(n);
         }
     }
     resultado = diffMaxMin(numeros);
-    alert(`En el array [${numeros}] el mayor es "${resultado[0]}" y el menor es "${resultado[1]}, su diferencia es ${resultado[2]}"`)
+    alert(`En el array [${numeros}] el mayor es "${resultado[0]}" y el menor es "${resultado[1]}", su diferencia es "${resultado[2]}"`)
 }
 
 function ejercicio18() {

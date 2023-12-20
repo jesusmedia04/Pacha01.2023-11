@@ -1,0 +1,25 @@
+---
+interface Props {
+	img: string;
+  name: string;
+  years: number;
+  type: string
+}
+
+const { img, name, years, type } = Astro.props;
+---
+
+<div
+  class="flex flex-col text-white uppercase font-semibold gap-4 backdrop-blur bg-gray-600 px-[20px] py-[20px] rounded-2xl"
+>
+  <img
+    src={img}
+    class="w-[180px] h-[180px] rounded-full bg-cover"
+  />
+  <h1>Tecnico {type}</h1>
+  <h1>{name}</h1>
+  <p>{years} years de experiencia</p>
+  <button class="bg-white rounded-2xl uppercase py-4 px-8 text-black"
+    >Seleccionar</button
+  >
+</div>

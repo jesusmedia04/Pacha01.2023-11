@@ -497,11 +497,15 @@ function Ejercicio27(cadenaDePalabras){
       function Ejercicio28(){
         
 
-   
+        var palabra;
+        var palabra_mayuscula;
 
-      let saludo = '¡Hola!';
+  palabra=parseInt(prompt("Ingresa una palabra"));
+  palabra=teclado.nextline();{
 
-      let primeraLetra = saludo[0].toUpperCase();
+  palabra_mayuscula= palabra.toUpperCase();
+system.out.println(+palabra_mayuscula);
+}
+      }
+
       
-      console.log(primeraLetra);}
-      // devuelve la letra 'H' en este caso

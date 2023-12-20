@@ -32,8 +32,68 @@ const Aerolinea = function () {
         console.log(arrAviones);
         reserva.asignarAvionIda(arrAviones[0]);
         reserva.asignarAvionVuelta(arrAviones[1]);
+        let pasajero = asignarPasajero();
+        reserva.avionIda.agregar_pasajero(pasajero);
+        reserva.avionVuelta.agregar_pasajero(pasajero);
         console.log(reserva);
+
+        let Pasajero = asignarPasajero(); 
+        reserva.avionIda.agregar_pasajero(Pasajero);
+        reserva.avionVuelta.agregar_pasajero(Pasajero);
+        console.log(reserva);
+
+
+
     }
+
+
+
+    
+    function asignarPasajero(){
+        let nombres = prompt("Ingrese el nombre del pasajero");
+        let apellidos = prompt("Ingrese los apellido del pasajero");
+        let nrodocumento = prompt("Ingrese el numero de documento del pasajero");
+        let objpasajeroS = new Pasajeros(nombres, apellidos, nrodocumento);
+        return objpasajeroS;
+
+    }
+
+
+
+
+
+        dibujarReserva(reserva);
+    }
+
+    function dibujarReserva(reserva) {
+        let origen = document.getElementById("origen");
+        origen.innerText = reserva.origen;
+        let destino = document.getElementById("destino");
+        destino.innerText = reserva.destino;
+        let fechas = document.getElementById("fechas");
+        fechas.innerText = `Vuelo reservado desde el ${reserva.fechaIda} hasta el ${reserva.fechaVuelta}`;
+        let nombresOrigen = document.getElementById("nombresOrigen");
+        nombresOrigen.innerText = `${reserva.avionIda.pasajeros[0].nombres} ${reserva.avionIda.pasajeros[0].apellidos}`;
+        let nombresDestino = document.getElementById("nombresDestino");
+        nombresDestino.innerText = `${reserva.avionVuelta.pasajeros[0].nombres} ${reserva.avionVuelta.pasajeros[0].apellidos}`;
+        //vueloIda
+        let vueloIda = document.getElementById("vueloIda");
+        vueloIda.innerText = `${reserva.avionIda.modelo} --- ${reserva.avionIda.matricula}`;
+        let vueloRetorno = document.getElementById("vueloRetorno");
+        vueloRetorno.innerText = `${reserva.avionVuelta.modelo} --- ${reserva.avionVuelta.matricula}`;
+        let divReserva = document.getElementById("divReserva");
+        divReserva.style.display="block";
+    }
+
+    function asignarPasajero(){
+        let nombres = prompt("Ingrese los nombres del pasajero");
+        let apellidos = prompt("Ingrese los apellidos del pasajero");
+        let numeroDocumento = prompt("Ingrese su numero de documento");
+        let objpasajero =  new Pasajeros(nombres,apellidos,numeroDocumento);
+        return objpasajero;
+
+    }
+
     return {
         init: function (parametros) {
             Nombre = parametros.Nombre;
@@ -63,10 +123,10 @@ class Aviones{
     }
 }
 class Pasajeros{
-    constructor(nombres, apellidos, nro_documento){
+    constructor(nombres, apellidos, nrodocumento){
         this.nombres = nombres;
         this.apellidos = apellidos;
-        this.nro_documento = nro_documento
+        this.nrodocumento = nrodocumento
     }
 }
 
@@ -86,3 +146,4 @@ class Reservas{
         this.avionVuelta = avion;
     }
 }
+

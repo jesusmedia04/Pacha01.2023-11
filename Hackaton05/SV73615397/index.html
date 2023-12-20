@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Reparación de Celulares</title>
+</head>
+<body>
+
+<h1>Sistema de Reparación de Celulares</h1>
+
+<!-- Formulario para ingresar información del teléfono -->
+<details>
+    <summary>Ingresar Telefono</summary>
+    <form id="phoneForm">
+        <p>
+            <label for="phoneNumber">Número de telefono:</label>
+            <input type="text" id="phoneNumber" name="phoneNumber" required>
+        </p>
+    
+        <p>
+            <label for="imei">IMEI:</label>
+            <input type="text" id="imei" name="imei" required>        
+        </p>
+    
+        <p>
+            <label for="brand">Marca:</label>
+            <input type="text" id="brand" name="brand">        
+        </p>
+    
+        <p>
+            <label for="model">Modelo:</label>
+            <input type="text" id="model" name="model">        
+        </p>
+    
+        <button type="button" onclick="submitPhoneForm()">Enviar</button>
+    </form>
+</details>
+
+<details>
+    <summary>Crear Tecnico</summary>
+    <form id="tecnicoForm">
+        <p>
+            <label for="tecnicoNombre">Nombre del tecnico:</label>
+            <input type="text" id="tecnicoNombre" name="tecnicoNombre" required>
+        </p>
+    
+        <p>
+            <label for="skillTecnico">Ingrese Skill:</label>
+            <input type="text" id="skillTecnico" name="skillTecnico" required>      
+            &emsp; <button onclick="agregarSkill(event)">Agregar skill</button>
+        </p>
+        <ul id="skillsTecnico">
+
+        </ul>    
+        <button type="button" onclick="submitTecnico()">Registrar</button>
+    </form>
+</details>
+
+<details>
+    <summary>Realizar Revision</summary>
+    <p>
+        <label for="revisionDiagnostico">Ingrese diagnostico:</label>
+        <textarea id="revisionDiagnostico" name="revisionDiagnostico" rows="4" cols="50">
+        </textarea>
+    </p>
+    <p>
+        
+        <br>
+        <label for="revisionTecnico">seleccione un técnico:</label>
+        <select name="revisionTecnico" id="revisionTecnico" onchange="loadSkillsByTecnico(event)">
+
+        </select>
+        <ul id="skillsTecnicoSeleccionado">
+
+        </ul>
+    </p>
+</details>
+
+<!-- Información del teléfono -->
+<div id="" style="display: none;">
+    <h2>Información del Teléfono</h2>
+    <p><strong>Número de telefono:</strong> <span id="infophoneNumber"></span></p>
+    <p><strong>IMEI:</strong> <span id="infoImei"></span></p>
+    <p><strong>Marca:</strong> <span id="infoBrand"></span></p>
+    <p><strong>Modelo:</strong> <span id="infoModel"></span></p>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(e) {
+        loadSelectTecnicos();
+    });
+    class Telefono{
+        constructor(numeroTelefono, imei, marca, modelo, estado = "En Revisión", diagnostico = "") {
+            this.numeroTelefono = numeroTelefono;
+            this.imei = imei;
+            this.marca = marca;
+            this.modelo = modelo;
+            this.estado = estado;
+            this.diagnostico = diagnostico;
+        }
+
+        realizarRevision(tecnico){
+            const revision = new Revision()
+        }
+    }
+    class Revision{
+        constructor(tecnico){
+            this.fecha = Date.now();
+            this.tecnico = tecnico;
+            this.telefono = null;
+            this.diagnostico = "";
+            this.primeraRevision = true;
+        }
+        
+        realizarDiagnostico(telefono,diagnostico,primeraRevision){
+            this.telefono = telefono;
+            this.diagnostico = diagnostico;
+            this.primeraRevision = primeraRevision;
+        }
+    }
+    class Tecnico {
+        constructor(nombre, skills) {
+            this.nombre = nombre;
+            this.skills = skills;
+        }
+    }
+
+    function loadSelectTecnicos(){
+        const selectTecnicos = document.getElementById('revisionTecnico');
+        let tecnicos = localStorage.getItem('tecnicos')!== null ? JSON.parse(localStorage.getItem('tecnicos')) : [];
+        selectTecnicos.innerHTML = tecnicos.length>0 ? `<option value=''>--------------</option>`+tecnicos.map(e=>`<option value="${e.nombre}"> ${e.nombre} </option>`).join('') : "<option value=''>No hay tecnicos registrados</option>";
+        
+    }
+
+    function loadSkillsByTecnico(event){
+        let tecnicoSeleccionado =  JSON.parse(localStorage.getItem('tecnicos')).find(x=>x.nombre === event.target.value);
+        console.log(tecnicoSeleccionado);
+        const divSkills = document.getElementById('skillsTecnicoSeleccionado');
+        if(tecnicoSeleccionado !== undefined){
+            divSkills.innerHTML = tecnicoSeleccionado.skills.length>0 ? tecnicoSeleccionado.skills.map(e=>`<li> ${e} </li>`).join('') : "";
+        }
+        else{
+            divSkills.innerHTML ="";
+        }
+    }
+
+    function submitPhoneForm() {
+        let phoneNumber = document.getElementById('phoneNumber').value;
+        let imei = document.getElementById('imei').value;
+        let marca = document.getElementById('brand').value;
+        let modelo = document.getElementById('model').value;
+
+        const phoneInfo = {
+            phoneNumber,
+            imei,
+            brand,
+            model,
+        };
+        const objTelefono = new Telefono(phoneNumber,imei,marca,modelo)
+        document.getElementById('phoneNumber').value = "";
+        document.getElementById('imei').value = "";
+        document.getElementById('brand').value = "";
+        document.getElementById('model').value = "";
+
+        localStorage.setItem('celular', JSON.stringify(objTelefono));
+
+    }
+
+    let currentArraySkills =[];
+
+    function agregarSkill(event) {
+        event.preventDefault();
+        try {
+            let skill = document.getElementById('skillTecnico').value;
+            if(skill !== "" && confirm("Está de acuerdo con ingresar esta skill?")){
+                currentArraySkills.push(skill);
+                displaySkills(currentArraySkills);
+                document.getElementById('skillTecnico').value = "";
+            }
+            else if (skill === ""){
+                throw new Error("No se aceptan nulos")
+            }
+        } catch (error) {
+            alert(`Error:${error.message}`)
+        }
+    }
+    function displaySkills(array) {
+        const divSkills = document.getElementById('skillsTecnico');
+        divSkills.innerHTML = array.length>0 ? array.map(e=>`<li> ${e} </li>`).join('') : "";
+    }
+    function submitTecnico(){
+        try {
+            let nombre = document.getElementById('tecnicoNombre').value;
+            if(nombre===""){throw new Error("No se aceptan campos Nulos")}
+            const nuevoTecnico = new Tecnico(nombre,currentArraySkills);
+            let tecnicos = localStorage.getItem('tecnicos')!== null ? JSON.parse(localStorage.getItem('tecnicos')) : [];
+            tecnicos.push(nuevoTecnico);
+            localStorage.setItem('tecnicos', JSON.stringify(tecnicos));
+            currentArraySkills = [];
+            displaySkills(currentArraySkills);
+        } catch (error) {
+            alert(`Error: ${error.message}`)
+        }
+    }
+</script>
+
+</body>
+</html>

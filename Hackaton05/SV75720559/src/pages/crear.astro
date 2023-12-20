@@ -1,0 +1,12 @@
+---
+import FormCrearTecnico from "../components/FormCrearTecnico";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Creacion de usuarios">
+  <main class="w-full h-screen grid place-items-center py-4">
+    <FormCrearTecnico	client:only="react" />
+
+  </main>
+  
+</Layout>

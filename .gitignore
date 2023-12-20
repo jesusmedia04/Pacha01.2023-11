@@ -128,5 +128,9 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+<<<<<<< HEAD
+/.vs
+=======
 
 .vscode
+>>>>>>> fuentes/main

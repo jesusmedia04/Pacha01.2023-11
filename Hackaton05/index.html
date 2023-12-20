@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de reparacion de Celulares</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        input[type="checkbox"] {
+            margin-top: 5px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #estadoEquipo {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #estadoTexto {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Sistema de Reparación de Celulares</h1>
+
+    <form id="reparacionForm">
+        <label for="numeroSerie">Número de Serie:</label>
+        <input type="text" id="numeroSerie" required>
+
+        <label for="imei">IMEI:</label>
+        <input type="text" id="imei" required>
+
+        <label for="marca">Marca:</label>
+        <input type="text" id="marca" required>
+
+        <label for="diagnostico">Diagnóstico:</label>
+        <textarea id="diagnostico" required></textarea>
+
+        <label for="autorizacion">Autorización del Usuario:</label>
+        <input type="checkbox" id="autorizacion" required> Autorizo la reparación
+
+        <label for="abono">Abono (50% de la reparación):</label>
+        <input type="number" id="abono" required>
+
+        <label for="tecnicoSkills">Habilidades del Técnico:</label>
+        <input type="text" id="tecnicoSkills" placeholder="Separadas por comas">
+
+        <label for="repuesto">Repuesto:</label>
+        <input type="text" id="repuesto">
+        
+        <button type="button" onclick="iniciarReparacion()">Iniciar Reparación</button>
+    </form>
+
+    <div id="estadoEquipo">
+        <h2>Estado del Equipo</h2>
+        <p id="estadoTexto"></p>
+    </div>
+
+    <script>
+        class Phone {
+            constructor(numeroSerie, IMEI, marca) {
+                this.numeroSerie = numeroSerie;
+                this.IMEI = IMEI;
+                this.marca = marca;
+                this.diagnostico = null;
+                this.autorizacionUsuario = false;
+                this.abono = 0;
+                this.tecnico = null;
+                this.repuestos = [];
+                this.estado = 'En revisión';
+            }
+        
+            pasarPrimeraRevision(diagnostico) {
+                this.diagnostico = diagnostico;
+                this.estado = 'Primera revisión completada';
+            }
+        
+            obtenerAutorizacionYAbono(autorizacionUsuario, abono) {
+                this.autorizacionUsuario = autorizacionUsuario;
+                this.abono = abono;
+                this.estado = 'Autorización y abono obtenidos';
+            }
+        
+            asignarTecnico(tecnico) {
+                this.tecnico = tecnico;
+                this.estado = 'En reparación';
+            }
+        
+            agregarRepuesto(repuesto) {
+                this.repuestos.push(repuesto);
+            }
+        
+            mostrarEstado() {
+                const estadoTexto = `Estado del teléfono ${this.numeroSerie}: ${this.estado}`;
+                document.getElementById('estadoTexto').textContent = estadoTexto;
+            }
+        }
+
+        class Technician {
+            constructor(nombre, skills) {
+                this.nombre = nombre;
+                this.skills = skills;
+            }
+        }
+
+        class RepairShop {
+            constructor(sucursal) {
+                this.sucursal = sucursal;
+                this.telefonosEnReparacion = [];
+            }
+        
+            revisarTelefono(phone) {
+                
+                if (!telefonoReportado(phone.numeroSerie, phone.IMEI)) {
+                    phone.pasarPrimeraRevision('Revisión inicial completa');
+                    this.telefonosEnReparacion.push(phone);
+                } else {
+                    console.log('El teléfono está reportado y no puede ser reparado.');
+                }
+            }
+        
+            autorizarReparacion(phone, autorizacionUsuario, abono) {
+                
+                if (autorizacionUsuario && abono >= 0.5 * phone.diagnostico.precioReparacion) {
+                    phone.obtenerAutorizacionYAbono(autorizacionUsuario, abono);
+                } else {
+                    console.log('Autorización y abono insuficientes para iniciar la reparación.');
+                }
+            }
+        
+            asignarTecnico(phone, tecnico) {
+                
+                if (tecnico.skills.includes(phone.marca)) {
+                    phone.asignarTecnico(tecnico);
+                } else {
+                    console.log('El técnico no tiene las habilidades necesarias para reparar este teléfono.');
+                }
+            }
+        
+            agregarRepuesto(phone, repuesto) {
+                phone.agregarRepuesto(repuesto);
+            }
+        
+            mostrarEstadoTelefonosEnReparacion() {
+                console.log('\nEstado de los teléfonos en reparación:');
+                this.telefonosEnReparacion.forEach(phone => {
+                    phone.mostrarEstado();
+                });
+            }
+        }
+
+        function iniciarReparacion() {
+            const numeroSerie = document.getElementById('numeroSerie').value;
+            const imei = document.getElementById('imei').value;
+            const marca = document.getElementById('marca').value;
+            const diagnostico = document.getElementById('diagnostico').value;
+            const autorizacion = document.getElementById('autorizacion').checked;
+            const abono = parseFloat(document.getElementById('abono').value);
+            const tecnicoSkills = document.getElementById('tecnicoSkills').value.split(',').map(skill => skill.trim());
+            const repuesto = document.getElementById('repuesto').value;
+
+            const telefono = new Phone(numeroSerie, imei, marca);
+            telefono.pasarPrimeraRevision(diagnostico);
+
+            repairShop.revisarTelefono(telefono);
+            repairShop.autorizarReparacion(telefono, autorizacion, abono);
+
+            const tecnico = new Technician('Técnico', tecnicoSkills);
+            repairShop.asignarTecnico(telefono, tecnico);
+
+            repairShop.agregarRepuesto(telefono, repuesto);
+
+            mostrarEstadoEquipo(telefono);
+        }
+
+        function mostrarEstadoEquipo(telefono) {
+            const estadoTexto = `Estado del equipo ${telefono.numeroSerie}: ${telefono.estado}`;
+            document.getElementById('estadoTexto').textContent = estadoTexto;
+        }
+
+        
+        function telefonoReportado(numeroSerie, IMEI) {
+            
+            return false;
+        }
+
+        
+        const repairShop = new RepairShop('Sucursal A');
+    </script>
+</body>
+</html>
