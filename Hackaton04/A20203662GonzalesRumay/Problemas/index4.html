@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área de Triángulo</title>
+    <script>
+        function triArea(base, altura) {
+            return (base * altura) / 2;
+        }
+
+        function mostrarResultado() {
+            var base = parseFloat(prompt("Ingrese la base del triángulo:"));
+            var altura = parseFloat(prompt("Ingrese la altura del triángulo:"));
+
+            if (!isNaN(base) && !isNaN(altura)) {
+                var resultado = triArea(base, altura);
+                alert("El área del triángulo es: " + resultado);
+            } else {
+                alert("Por favor, ingrese valores numéricos válidos para la base y la altura.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Área de Triángulo</h1>
+    <button onclick="mostrarResultado()">Calcular Área</button>
+</body>
+</html>

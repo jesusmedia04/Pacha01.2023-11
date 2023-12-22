@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aproximación de Pi</title>
+    <script>
+        function aproximacionPi() {
+            var n = parseInt(prompt("Ingrese la cantidad de términos para la aproximación de Pi:"));
+            var terminos, aproximacionPi = 0;
+
+            for (var i = 0; i < n; i++) {
+                terminos = 2 * i + 1;
+                aproximacionPi += Math.pow(-1, i) * 4.0 / terminos;
+            }
+
+            alert("La aproximación de Pi con " + n + " términos es: " + aproximacionPi);
+        }
+    </script>
+</head>
+<body>
+    <h1>Aproximación de Pi</h1>
+    <button onclick="aproximacionPi()">Calcular Aproximación de Pi</button>
+</body>
+</html>

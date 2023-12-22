@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Potencia de un Número</title>
+    <script>
+        function potenciaNumero(base, exponente) {
+            return Math.pow(base, exponente);
+        }
+
+        function mostrarPotencia() {
+            var base = parseFloat(prompt("Ingrese la base:"));
+            var exponente = parseInt(prompt("Ingrese el exponente (número entero):"));
+
+            if (!isNaN(base) && Number.isInteger(exponente)) {
+                var resultado = potenciaNumero(base, exponente);
+                alert(base + " elevado a la " + exponente + " es: " + resultado);
+            } else {
+                alert("Por favor, ingrese una base válida y un exponente entero.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Potencia de un Número</h1>
+    <button onclick="mostrarPotencia()">Calcular Potencia</button>
+</body>
+</html>

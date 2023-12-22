@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filtrar Enteros de una Matriz</title>
+</head>
+<body>
+  <h1>Filtrar Enteros de una Matriz</h1>
+  <label for="inputArray">Ingrese una matriz de valores:</label>
+  <input type="text" id="inputArray" placeholder="Ejemplo: 1, 2, 3, 'x', 'y', 10" required>
+  <button onclick="filtrarEnteros()">Filtrar Enteros</button>
+  <div id="resultado"></div>
+
+  <script>
+    function filterList(arr) {
+      return arr.filter(element => typeof element === 'number');
+    }
+
+    function filtrarEnteros() {
+      const inputArray = document.getElementById('inputArray').value;
+      const array = inputArray.split(',').map(element => {
+        const trimmedElement = element.trim();
+        return !isNaN(trimmedElement) ? Number(trimmedElement) : trimmedElement;
+      });
+
+      const resultado = filterList(array);
+      document.getElementById('resultado').innerHTML = `
+        <p>La nueva matriz con enteros es: [${resultado.join(', ')}]</p>
+      `;
+    }
+  </script>
+</body>
+</html>

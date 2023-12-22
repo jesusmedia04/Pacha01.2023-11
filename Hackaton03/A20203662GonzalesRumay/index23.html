@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Suma de Impares</title>
+    <script>
+        function calcularSumaImpares() {
+            // Obtener el valor ingresado por el usuario
+            var n = parseInt(document.getElementById("numero").value);
+
+            // Validar que el valor sea un número mayor que 0
+            if (Number.isInteger(n) && n > 0) {
+                // Calcular la suma de los impares menores o iguales a n
+                var suma = 0;
+                var resultado = "Calculando la suma de los impares menores o iguales a " + n + "...<br>";
+                for (var i = 1; i <= n; i += 2) {
+                    suma += i;
+                    resultado += "La suma total de los impares menores o iguales a " + n + " es " + suma + "<br>";
+                }
+
+                // Mostrar el resultado
+                document.getElementById("resultado").innerHTML = resultado;
+            } else {
+                document.getElementById("resultado").innerHTML = "Error: Ingrese un número entero mayor que 0.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Calculadora de Suma de Impares</h1>
+    <p>Ingrese un número para calcular la suma de los impares menores o iguales a él:</p>
+    <input type="text" id="numero" placeholder="Número">
+    <button onclick="calcularSumaImpares()">Calcular Suma de Impares</button>
+    <div id="resultado"></div>
+</body>
+</html>

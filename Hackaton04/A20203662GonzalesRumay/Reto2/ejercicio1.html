@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saludo con Datos</title>
+</head>
+<body>
+  <script>
+    // Definir la función arrow
+    const obtenerSaludo = (nombre, apellido, edad) => {
+      return `Hola, mi nombre es ${nombre} ${apellido} y mi edad es ${edad}.`;
+    };
+
+    // Solicitar entrada del usuario
+    const nombre = prompt("Ingresa tu nombre:");
+    const apellido = prompt("Ingresa tu apellido:");
+    const edad = prompt("Ingresa tu edad:");
+
+    // Llamar a la función con los datos ingresados
+    const saludoCompleto = obtenerSaludo(nombre, apellido, edad);
+
+    // Mostrar el resultado en la consola y en la página HTML
+    console.log(saludoCompleto);
+
+    const resultadoElemento = document.createElement("p");
+    resultadoElemento.textContent = saludoCompleto;
+    document.body.appendChild(resultadoElemento);
+  </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reemplazar Vocales</title>
+</head>
+<body>
+  <h1>Reemplazar Vocales</h1>
+  <label for="inputString">Ingrese una cadena de texto:</label>
+  <input type="text" id="inputString" placeholder="Ejemplo: apples and bananas" required>
+  <label for="inputVowel">Ingrese la vocal con la que reemplazar:</label>
+  <input type="text" id="inputVowel" placeholder="Ejemplo: u" required>
+  <button onclick="reemplazarVocales()">Reemplazar Vocales</button>
+  <div id="resultado"></div>
+
+  <script>
+    String.prototype.vreplace = function (vowel) {
+      const regex = /[aeiou]/gi;
+      return this.replace(regex, vowel);
+    };
+
+    function reemplazarVocales() {
+      const inputString = document.getElementById('inputString').value;
+      const inputVowel = document.getElementById('inputVowel').value;
+
+      const resultado = inputString.vreplace(inputVowel);
+      document.getElementById('resultado').innerHTML = `
+        <p>La cadena resultante es: "${resultado}"</p>
+      `;
+    }
+  </script>
+</body>
+</html>

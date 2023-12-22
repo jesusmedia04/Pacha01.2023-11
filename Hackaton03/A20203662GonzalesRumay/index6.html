@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Sueldo Semanal</title>
+    <script>
+        function calcularSueldo() {
+            // Obtener las horas trabajadas ingresadas por el usuario
+            var horasTrabajadas = parseFloat(document.getElementById("horasTrabajadas").value);
+
+            // Calcular el sueldo semanal
+            var sueldoSemanal;
+            if (horasTrabajadas <= 40) {
+                // Si trabaja 40 horas o menos, se le paga $20 por hora
+                sueldoSemanal = horasTrabajadas * 20.0;
+            } else {
+                // Si trabaja más de 40 horas, se le paga $20 por las primeras 40 horas y $25 por las horas extras
+                sueldoSemanal = 40 * 20.0 + (horasTrabajadas - 40) * 25.0;
+            }
+
+            // Mostrar el sueldo semanal
+            document.getElementById("resultado").innerHTML = "Su sueldo semanal es: $" + sueldoSemanal.toFixed(2);
+        }
+    </script>
+</head>
+<body>
+    <h1>Calculadora de Sueldo Semanal</h1>
+    <p>Ingrese las horas trabajadas en la semana:</p>
+    <input type="text" id="horasTrabajadas" placeholder="Horas trabajadas">
+    <button onclick="calcularSueldo()">Calcular Sueldo</button>
+    <p id="resultado"></p>
+</body>
+</html>

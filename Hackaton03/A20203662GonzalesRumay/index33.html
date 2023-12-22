@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Continuar Programa</title>
+    <script>
+        function ejecutarPrograma() {
+            var continuar = true;
+
+            while (continuar) {
+                // Aquí va el código de tu programa
+                alert("Hola, aquí iría tu código...");
+
+                // Preguntar al usuario si desea continuar
+                continuar = confirm("¿Desea continuar con el programa?");
+            }
+
+            alert("Fin del programa");
+        }
+    </script>
+</head>
+<body>
+    <h1>Programa con Continuación</h1>
+    <button onclick="ejecutarPrograma()">Ejecutar Programa</button>
+</body>
+</html>

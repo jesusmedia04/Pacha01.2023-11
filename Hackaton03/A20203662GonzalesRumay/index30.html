@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suma de los Primeros Cien Números</title>
+    <script>
+        function calcularSuma() {
+            var suma = 0;
+
+            for (var contador = 1; contador <= 100; contador++) {
+                suma += contador;
+            }
+
+            alert("La suma de los primeros cien números es: " + suma);
+        }
+    </script>
+</head>
+<body>
+    <h1>Suma de los Primeros Cien Números</h1>
+    <button onclick="calcularSuma()">Calcular Suma</button>
+</body>
+</html>

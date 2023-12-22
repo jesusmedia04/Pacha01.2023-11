@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de Multiplicar</title>
+    <script>
+        function imprimirTablaMultiplicar() {
+            var resultado = '';
+
+            for (var i = 1; i <= 9; i++) {
+                resultado += "Tabla de multiplicar del " + i + ":\n";
+
+                for (var j = 1; j <= 10; j++) {
+                    var multiplicacion = i * j;
+                    resultado += i + " x " + j + " = " + multiplicacion + "\n";
+                }
+
+                resultado += "\n"; // Salto de línea entre tablas
+            }
+
+            alert(resultado);
+        }
+    </script>
+</head>
+<body>
+    <h1>Tabla de Multiplicar</h1>
+    <button onclick="imprimirTablaMultiplicar()">Imprimir Tabla de Multiplicar</button>
+</body>
+</html>

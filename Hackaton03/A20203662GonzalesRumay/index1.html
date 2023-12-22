@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Dígitos</title>
+    <script>
+        function verificarDigitos() {
+            // Obtener el número ingresado por el usuario
+            var numero = document.getElementById("numero").value;
+
+            // Verificar si el número tiene tres dígitos
+            if (numero.length === 3 && !isNaN(numero)) {
+                document.getElementById("resultado").innerHTML = "El número tiene tres dígitos.";
+            } else {
+                document.getElementById("resultado").innerHTML = "El número no tiene tres dígitos o no es un número válido.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Verificador de Dígitos</h1>
+    <p>Ingrese un número:</p>
+    <input type="text" id="numero" placeholder="Ingrese un número">
+    <button onclick="verificarDigitos()">Verificar</button>
+    <p id="resultado"></p>
+</body>
+</html>

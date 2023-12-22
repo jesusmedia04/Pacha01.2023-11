@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Números Negativos</title>
+    <script>
+        function verificarNegativo() {
+            // Obtener el número ingresado por el usuario
+            var numero = document.getElementById("numero").value;
+
+            // Verificar si el número es negativo
+            if (parseInt(numero) < 0) {
+                document.getElementById("resultado").innerHTML = "El número es negativo.";
+            } else if (parseInt(numero) > 0) {
+                document.getElementById("resultado").innerHTML = "El número es positivo.";
+            } else {
+                document.getElementById("resultado").innerHTML = "El número es cero.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Verificador de Números Negativos</h1>
+    <p>Ingrese un número entero:</p>
+    <input type="text" id="numero" placeholder="Ingrese un número entero">
+    <button onclick="verificarNegativo()">Verificar</button>
+    <p id="resultado"></p>
+</body>
+</html>

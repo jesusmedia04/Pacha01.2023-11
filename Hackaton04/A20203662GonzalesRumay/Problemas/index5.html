@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <script>
+        function calculator(num1, operacion, num2) {
+            switch (operacion) {
+                case "+":
+                    return num1 + num2;
+                case "-":
+                    return num1 - num2;
+                case "/":
+                    return num1 / num2;
+                case "x":
+                    return num1 * num2;
+                case "%":
+                    return num1 % num2;
+                default:
+                    return "El parámetro no es reconocido";
+            }
+        }
+
+        function mostrarResultado() {
+            var num1 = parseFloat(prompt("Ingrese el primer número:"));
+            var operacion = prompt("Ingrese la operación matemática (+, -, /, x, %):");
+            var num2 = parseFloat(prompt("Ingrese el segundo número:"));
+
+            if (!isNaN(num1) && !isNaN(num2)) {
+                var resultado = calculator(num1, operacion, num2);
+                alert("El resultado es: " + resultado);
+            } else {
+                alert("Por favor, ingrese valores numéricos válidos para los números.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <button onclick="mostrarResultado()">Calcular</button>
+</body>
+</html>

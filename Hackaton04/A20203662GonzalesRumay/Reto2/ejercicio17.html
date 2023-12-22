@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diferencia entre el Número Más Grande y el Más Pequeño</title>
+</head>
+<body>
+  <h1>Diferencia entre el Número Más Grande y el Más Pequeño</h1>
+  <label for="inputArray">Ingrese una matriz de números (separados por comas):</label>
+  <input type="text" id="inputArray" placeholder="Ejemplo: 10, 4, 1, 4, -10, -50, 32, 21" required>
+  <button onclick="calcularDiferencia()">Calcular Diferencia</button>
+  <div id="resultado"></div>
+
+  <script>
+    function diffMaxMin(arr) {
+      const max = Math.max(...arr);
+      const min = Math.min(...arr);
+      return max - min;
+    }
+
+    function calcularDiferencia() {
+      const inputArray = document.getElementById('inputArray').value;
+      const array = inputArray.split(',').map(Number);
+
+      if (array.some(isNaN)) {
+        alert('Por favor, ingrese una matriz válida de números separados por comas.');
+        return;
+      }
+
+      const resultado = diffMaxMin(array);
+      document.getElementById('resultado').innerHTML = `
+        <p>La diferencia entre el número más grande y el más pequeño es: ${resultado}</p>
+      `;
+    }
+  </script>
+</body>
+</html>

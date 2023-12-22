@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Media</title>
+    <script>
+        function calcularMedia() {
+            var suma = 0;
+            var contador = 0;
+            
+            do {
+                var numero = parseFloat(prompt("Ingrese un número positivo (o un número negativo para finalizar):"));
+
+                if (isNaN(numero)) {
+                    alert("Por favor, ingrese un número válido.");
+                } else if (numero >= 0) {
+                    suma += numero;
+                    contador++;
+                }
+            } while (numero >= 0);
+
+            if (contador > 0) {
+                var media = suma / contador;
+                alert("La media de los números ingresados es: " + media.toFixed(2));
+            } else {
+                alert("No se ingresaron números positivos para calcular la media.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Calculadora de Media</h1>
+    <button onclick="calcularMedia()">Calcular Media</button>
+</body>
+</html>

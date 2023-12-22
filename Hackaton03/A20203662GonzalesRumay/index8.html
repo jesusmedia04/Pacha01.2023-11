@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Promedio y Aprobación</title>
+    <script>
+        function calcularPromedioYAprobacion() {
+            // Obtener las tres notas ingresadas por el usuario
+            var nota1 = parseFloat(document.getElementById("nota1").value);
+            var nota2 = parseFloat(document.getElementById("nota2").value);
+            var nota3 = parseFloat(document.getElementById("nota3").value);
+
+            // Calcular el promedio de las tres notas
+            var promedio = (nota1 + nota2 + nota3) / 3.0;
+
+            // Determinar si el estudiante aprobó o no
+            var resultado;
+            if (promedio >= 14.0) {
+                resultado = "El estudiante aprobó con un promedio de " + promedio.toFixed(2);
+            } else {
+                resultado = "El estudiante no aprobó con un promedio de " + promedio.toFixed(2);
+            }
+
+            // Mostrar los resultados
+            document.getElementById("resultados").innerHTML = resultado;
+        }
+    </script>
+</head>
+<body>
+    <h1>Calculadora de Promedio y Aprobación</h1>
+    <p>Ingrese la primera nota:</p>
+    <input type="text" id="nota1" placeholder="Nota 1">
+    <p>Ingrese la segunda nota:</p>
+    <input type="text" id="nota2" placeholder="Nota 2">
+    <p>Ingrese la tercera nota:</p>
+    <input type="text" id="nota3" placeholder="Nota 3">
+    <button onclick="calcularPromedioYAprobacion()">Calcular Promedio y Aprobación</button>
+    <div id="resultados"></div>
+</body>
+</html>

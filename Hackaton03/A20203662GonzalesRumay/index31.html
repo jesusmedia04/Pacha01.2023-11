@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media de Números Pares e Impares</title>
+    <script>
+        function calcularMedia() {
+            var sumaPares = 0;
+            var sumaImpares = 0;
+            var contadorPares = 0;
+            var contadorImpares = 0;
+
+            for (var i = 0; i < 10; i++) {
+                var numero = parseInt(prompt("Ingrese un número:"));
+
+                if (numero % 2 === 0) {
+                    sumaPares += numero;
+                    contadorPares++;
+                } else {
+                    sumaImpares += numero;
+                    contadorImpares++;
+                }
+            }
+
+            var mediaPares = contadorPares > 0 ? sumaPares / contadorPares : 0;
+            var mediaImpares = contadorImpares > 0 ? sumaImpares / contadorImpares : 0;
+
+            alert("Media de números pares: " + mediaPares.toFixed(2) + "\nMedia de números impares: " + mediaImpares.toFixed(2));
+        }
+    </script>
+</head>
+<body>
+    <h1>Media de Números Pares e Impares</h1>
+    <button onclick="calcularMedia()">Calcular Media</button>
+</body>
+</html>

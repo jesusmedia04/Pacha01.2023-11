@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Determinador de Día de la Semana</title>
+    <script>
+        function determinarDiaSemana() {
+            // Obtener el número ingresado por el usuario
+            var numeroDia = parseInt(document.getElementById("numeroDia").value);
+
+            // Determinar el día de la semana
+            var diaSemana;
+            switch (numeroDia) {
+                case 1:
+                    diaSemana = "Lunes";
+                    break;
+                case 2:
+                    diaSemana = "Martes";
+                    break;
+                case 3:
+                    diaSemana = "Miércoles";
+                    break;
+                case 4:
+                    diaSemana = "Jueves";
+                    break;
+                case 5:
+                    diaSemana = "Viernes";
+                    break;
+                case 6:
+                    diaSemana = "Sábado";
+                    break;
+                case 7:
+                    diaSemana = "Domingo";
+                    break;
+                default:
+                    diaSemana = "Número no válido. Debe ser del 1 al 7.";
+            }
+
+            // Mostrar el resultado
+            document.getElementById("resultado").innerHTML = diaSemana;
+        }
+    </script>
+</head>
+<body>
+    <h1>Determinador de Día de la Semana</h1>
+    <p>Ingrese un número del 1 al 7:</p>
+    <input type="text" id="numeroDia" placeholder="Ingrese un número del 1 al 7">
+    <button onclick="determinarDiaSemana()">Determinar Día de la Semana</button>
+    <p id="resultado"></p>
+</body>
+</html>

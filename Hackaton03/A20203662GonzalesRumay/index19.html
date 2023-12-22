@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Salario Semanal</title>
+    <script>
+        function calcularSalario() {
+            // Obtener los valores ingresados por el usuario
+            var idEmpleado = parseInt(document.getElementById("idEmpleado").value);
+            var diasTrabajados = parseInt(document.getElementById("diasTrabajados").value);
+
+            // Definir constantes
+            const SALARIO_CAJERO = 56;
+            const SALARIO_SERVIDOR = 64;
+            const SALARIO_PREPARADOR = 80;
+            const SALARIO_MANTENIMIENTO = 48;
+
+            // Definir variables
+            var salarioSemanal;
+
+            // Calcular el salario semanal según el empleado y los días trabajados
+            if (diasTrabajados >= 1 && diasTrabajados <= 6) {
+                switch (idEmpleado) {
+                    case 1:
+                        salarioSemanal = SALARIO_CAJERO * diasTrabajados;
+                        break;
+                    case 2:
+                        salarioSemanal = SALARIO_SERVIDOR * diasTrabajados;
+                        break;
+                    case 3:
+                        salarioSemanal = SALARIO_PREPARADOR * diasTrabajados;
+                        break;
+                    case 4:
+                        salarioSemanal = SALARIO_MANTENIMIENTO * diasTrabajados;
+                        break;
+                    default:
+                        document.getElementById("resultado").innerHTML = "Número de empleado no válido.";
+                        return;
+                }
+
+                // Mostrar el resultado
+                document.getElementById("resultado").innerHTML = "El salario semanal para el empleado " + idEmpleado + " es: $" + salarioSemanal;
+            } else {
+                document.getElementById("resultado").innerHTML = "Cantidad de días trabajados no válida. Debe ser de 1 a 6 días.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Calculadora de Salario Semanal</h1>
+    <p>Ingrese el número identificador del empleado:</p>
+    <input type="text" id="idEmpleado" placeholder="Ingrese el número identificador">
+    <p>Ingrese la cantidad de días trabajados en la semana (máximo 6 días):</p>
+    <input type="text" id="diasTrabajados" placeholder="Ingrese la cantidad de días trabajados">
+    <button onclick="calcularSalario()">Calcular Salario</button>
+    <p id="resultado"></p>
+</body>
+</html>

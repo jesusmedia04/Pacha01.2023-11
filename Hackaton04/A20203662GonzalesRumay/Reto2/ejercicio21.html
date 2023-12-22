@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encontrar a Nemo</title>
+</head>
+<body>
+  <h1>Encontrar a Nemo</h1>
+  <label for="inputSentence">Ingrese una cadena de palabras:</label>
+  <input type="text" id="inputSentence" placeholder="Ejemplo: I am finding Nemo !" required>
+  <button onclick="encontrarNemo()">Encontrar Nemo</button>
+  <div id="resultado"></div>
+
+  <script>
+    function encontrarNemo() {
+      const inputSentence = document.getElementById('inputSentence').value;
+      const words = inputSentence.split(' ');
+
+      const nemoIndex = words.findIndex(word => word.toLowerCase() === 'nemo');
+      
+      if (nemoIndex !== -1) {
+        document.getElementById('resultado').innerHTML = `
+          <p>¡Encontré a Nemo en ${nemoIndex + 1}!</p>
+        `;
+      } else {
+        document.getElementById('resultado').innerHTML = `
+          <p>No se encontró a Nemo.</p>
+        `;
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mayor Número de Cada Matriz</title>
+</head>
+<body>
+  <h1>Resultado</h1>
+  <div id="resultado"></div>
+
+  <script>
+    function findLargestNums(matrices) {
+      const mayores = matrices.map(matriz => Math.max(...matriz));
+      return mayores;
+    }
+
+    const matricesNumeros = [
+      [4, 2, 7, 1],
+      [20, 70, 40, 90],
+      [1, 2, 0]
+    ];
+
+    const mayoresResultantes = findLargestNums(matricesNumeros);
+
+    // Mostrar el resultado en la página web
+    document.getElementById('resultado').innerHTML = `
+      <p>Matrices originales:</p>
+      <ul>
+        ${matricesNumeros.map(matriz => `<li>[${matriz.join(', ')}]</li>`).join('')}
+      </ul>
+      <p>Mayores números de cada matriz: [${mayoresResultantes.join(', ')}]</p>
+    `;
+  </script>
+</body>
+</html>

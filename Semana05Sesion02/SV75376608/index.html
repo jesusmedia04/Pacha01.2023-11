@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="titulo">Document</title>
+</head>
+<body>
+
+    <button id="reservar" >Reservar</button>
+
+    <div id="divReserva" style="display: block;">
+        <label for="">Origen:</label>
+        <label id="origen" for=""></label>
+        <br>
+        <hr>
+        <label for="">Destino:</label>
+        <label id="destino" for=""></label>
+        <br>
+        <hr>
+        <label for="">Fecha de Ida:</label>
+        <label id="fechaIda" for=""></label>
+        <br>
+        <hr>
+        <label for="">Fecha de Vuelta:</label>
+        <label id="fechaVuelta" for=""></label>
+        <br>
+        <hr>
+        <label for="">Nombre:</label>
+        <label id="nombres" for=""></label>
+        <br>
+        <hr>
+        <label for="">Apellido:</label>
+        <label id="apellidos" for=""></label>
+        <br>
+        <hr>
+        <label for="">Nro Documento:</label>
+        <label id="nroDocumento" for=""></label>
+    </div>
+    
+    <script src="script.js"></script>
+    <script>
+        let param = {
+            Nombre : "JetSmart filial",
+            Ubicacion :  "Bogota"
+        };
+        Aerolinea.init(param) 
+    </script>
+</body>
+</html>
+

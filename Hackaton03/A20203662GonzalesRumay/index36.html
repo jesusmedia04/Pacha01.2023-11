@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serie de Fibonacci</title>
+    <script>
+        function calcularFibonacci() {
+            var cantidad = parseInt(prompt("Ingrese la cantidad de términos de la serie de Fibonacci a calcular:"));
+            var resultado = document.getElementById("resultado");
+
+            var a = 0, b = 1, c;
+            var serie = "";
+
+            serie += a + "<br>";
+            serie += b + "<br>";
+
+            for (var i = 3; i <= cantidad; i++) {
+                c = a + b;
+                serie += c + "<br>";
+
+                a = b;
+                b = c;
+            }
+
+            resultado.innerHTML = "Serie de Fibonacci con " + cantidad + " términos:<br>" + serie;
+        }
+    </script>
+</head>
+<body>
+    <h1>Serie de Fibonacci</h1>
+    <button onclick="calcularFibonacci()">Calcular Fibonacci</button>
+    <div id="resultado"></div>
+</body>
+</html>

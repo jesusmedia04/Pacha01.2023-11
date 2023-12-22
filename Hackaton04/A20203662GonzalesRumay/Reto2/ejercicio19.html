@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Repetir Elemento en una Matriz</title>
+</head>
+<body>
+  <h1>Repetir Elemento en una Matriz</h1>
+  <label for="inputElement">Ingrese el elemento a repetir:</label>
+  <input type="text" id="inputElement" placeholder="Ejemplo: 13" required>
+  <label for="inputTimes">Ingrese la cantidad de veces a repetir:</label>
+  <input type="number" id="inputTimes" placeholder="Ejemplo: 5" required>
+  <button onclick="repetirElemento()">Repetir Elemento</button>
+  <div id="resultado"></div>
+
+  <script>
+    function repeat(element, times) {
+      return Array.from({ length: times }, () => element);
+    }
+
+    function repetirElemento() {
+      const inputElement = document.getElementById('inputElement').value;
+      const inputTimes = document.getElementById('inputTimes').value;
+
+      if (!isNaN(inputElement) && !isNaN(inputTimes)) {
+        const elemento = Number(inputElement);
+        const veces = Number(inputTimes);
+
+        const resultado = repeat(elemento, veces);
+        document.getElementById('resultado').innerHTML = `
+          <p>La matriz resultante es: [${resultado.join(', ')}]</p>
+        `;
+      } else {
+        document.getElementById('resultado').innerHTML = `
+          <p>Por favor, ingrese valores numéricos válidos.</p>
+        `;
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+¿Cómo defines una función?
+Definimos una funcion con la palabra clave:
+
+ FUNCTION nombreFuncion (){} 
+
+
+
+¿Hasta cuantos argumentos puedes declarar en una función?
+Se pueden declarar varios parametros , los que necesites

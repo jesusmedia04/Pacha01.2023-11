@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordenador de Números</title>
+    <script>
+        function ordenarNumeros() {
+            // Obtener los tres números ingresados por el usuario
+            var num1 = parseInt(document.getElementById("num1").value);
+            var num2 = parseInt(document.getElementById("num2").value);
+            var num3 = parseInt(document.getElementById("num3").value);
+
+            // Ordenar los números de menor a mayor
+            if (num1 > num2) {
+                var temp = num1;
+                num1 = num2;
+                num2 = temp;
+            }
+
+            if (num2 > num3) {
+                var temp = num2;
+                num2 = num3;
+                num3 = temp;
+            }
+
+            if (num1 > num2) {
+                var temp = num1;
+                num1 = num2;
+                num2 = temp;
+            }
+
+            // Mostrar los números ordenados
+            document.getElementById("resultado").innerHTML = "Números ordenados de menor a mayor: " + num1 + ", " + num2 + ", " + num3;
+        }
+    </script>
+</head>
+<body>
+    <h1>Ordenador de Números</h1>
+    <p>Ingrese el primer número:</p>
+    <input type="text" id="num1" placeholder="Ingrese el primer número">
+    <p>Ingrese el segundo número:</p>
+    <input type="text" id="num2" placeholder="Ingrese el segundo número">
+    <p>Ingrese el tercer número:</p>
+    <input type="text" id="num3" placeholder="Ingrese el tercer número">
+    <button onclick="ordenarNumeros()">Ordenar</button>
+    <p id="resultado"></p>
+</body>
+</html>

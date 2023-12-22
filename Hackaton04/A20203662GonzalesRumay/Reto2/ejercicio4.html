@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suma de Argumentos</title>
+</head>
+<body>
+  <script>
+    
+    function sumaDeArgumentos(...argumentos) {
+      // Utilizar el método reduce para sumar los argumentos
+      const suma = argumentos.reduce((total, actual) => total + actual, 0);
+      return suma;
+    }
+
+    const valores = prompt("Ingrese los valores separados por comas (por ejemplo, 1, 2, 3):");
+
+    // Convertir la cadena de entrada en un array de números
+    const valoresArray = valores.split(",").map(Number);
+
+    // Calcular la suma de los valores utilizando la función
+    const resultado = sumaDeArgumentos(...valoresArray);
+
+    alert(`La suma de los argumentos es: ${resultado}`);
+  </script>
+</body>
+</html>

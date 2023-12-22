@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suma de Cubos</title>
+</head>
+<body>
+  <script>
+    // Definir la función para sumar los cubos
+    function sumOfCubes(...numeros) {
+      return numeros.reduce((suma, numero) => suma + Math.pow(numero, 3), 0);
+    }
+
+    // Obtener números del usuario
+    const numerosUsuario = prompt("Ingrese números separados por coma (ej. 1, 5, 9):");
+    
+    // Convertir la cadena de números a un array
+    const numerosArray = numerosUsuario.split(",").map(numero => parseInt(numero.trim(), 10));
+
+    // Calcular la suma de cubos
+    const resultado = sumOfCubes(...numerosArray);
+
+    // Mostrar el resultado en la consola y en la página HTML
+    console.log(resultado);
+
+    const resultadoElemento = document.createElement("p");
+    resultadoElemento.textContent = `La suma de los cubos es: ${resultado}`;
+    document.body.appendChild(resultadoElemento);
+  </script>
+</body>
+</html>
+

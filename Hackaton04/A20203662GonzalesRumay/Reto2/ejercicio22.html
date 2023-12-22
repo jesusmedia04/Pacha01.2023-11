@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capitalizar Última Letra</title>
+</head>
+<body>
+  <h1>Capitalizar Última Letra</h1>
+  <label for="inputWord">Ingrese una palabra:</label>
+  <input type="text" id="inputWord" placeholder="Ejemplo: hello" required>
+  <button onclick="capitalizarUltimaLetra()">Capitalizar Última Letra</button>
+  <div id="resultado"></div>
+
+  <script>
+    function capitalizarUltimaLetra() {
+      const inputWord = document.getElementById('inputWord').value;
+
+      if (inputWord.length > 0) {
+        const words = inputWord.split(' ');
+        const capitalizedWords = words.map(word => {
+          const lastLetter = word.slice(-1).toUpperCase();
+          const restOfWord = word.slice(0, -1);
+          return restOfWord + lastLetter;
+        });
+
+        document.getElementById('resultado').innerHTML = `
+          <p>${capitalizedWords.join(' ')}</p>
+        `;
+      } else {
+        document.getElementById('resultado').innerHTML = `
+          <p>Por favor, ingrese una palabra.</p>
+        `;
+      }
+    }
+  </script>
+</body>
+</html>

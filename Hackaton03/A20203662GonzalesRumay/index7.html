@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Descuento por Membresía</title>
+    <script>
+        function calcularDescuento() {
+            // Obtener el tipo de membresía y el total de la compra ingresados por el usuario
+            var tipoMembresia = document.getElementById("tipoMembresia").value.toUpperCase();
+            var totalCompra = parseFloat(document.getElementById("totalCompra").value);
+
+            // Calcular el descuento según el tipo de membresía
+            var descuento = 0.0;
+            switch (tipoMembresia) {
+                case "A":
+                    descuento = 0.10; // 10% de descuento para Tipo A
+                    break;
+                case "B":
+                    descuento = 0.15; // 15% de descuento para Tipo B
+                    break;
+                case "C":
+                    descuento = 0.20; // 20% de descuento para Tipo C
+                    break;
+            }
+
+            // Calcular el total con descuento
+            var totalConDescuento = totalCompra - (totalCompra * descuento);
+
+            // Mostrar los resultados
+            document.getElementById("resultados").innerHTML =
+                "Tipo de membresía: " + tipoMembresia + "<br>" +
+                "Total de la compra: $" + totalCompra.toFixed(2) + "<br>" +
+                "Descuento aplicado: " + (descuento * 100) + "%<br>" +
+                "Total con descuento: $" + totalConDescuento.toFixed(2);
+        }
+    </script>
+</head>
+<body>
+    <h1>Calculadora de Descuento por Membresía</h1>
+    <p>Ingrese el tipo de membresía (A, B o C):</p>
+    <input type="text" id="tipoMembresia" placeholder="Tipo de membresía">
+    <p>Ingrese el total de la compra:</p>
+    <input type="text" id="totalCompra" placeholder="Total de la compra">
+    <button onclick="calcularDescuento()">Calcular Descuento</button>
+    <div id="resultados"></div>
+</body>
+</html>

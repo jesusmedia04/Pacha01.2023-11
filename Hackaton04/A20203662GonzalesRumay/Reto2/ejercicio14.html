@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suma de Números Cuadrados</title>
+</head>
+<body>
+  <h1>Suma de Números Cuadrados</h1>
+  <label for="numero">Ingrese un número:</label>
+  <input type="number" id="numero" min="1" required>
+  <button onclick="calcularSuma()">Calcular</button>
+  <div id="resultado"></div>
+
+  <script>
+    function squaresSum(n) {
+      let suma = 0;
+      for (let i = 1; i <= n; i++) {
+        suma += i ** 2;
+      }
+      return suma;
+    }
+
+    function calcularSuma() {
+      const numeroIngresado = document.getElementById('numero').value;
+      const numero = parseInt(numeroIngresado);
+
+      if (!isNaN(numero) && numero > 0) {
+        const resultado = squaresSum(numero);
+        document.getElementById('resultado').innerHTML = `
+          <p>Para el número ${numero}, la suma de cuadrados es: ${resultado}</p>
+        `;
+      } else {
+        alert('Por favor, ingrese un número entero positivo.');
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Factorial</title>
+    <script>
+        function calcularFactorial() {
+            var numero = parseFloat(prompt("Ingrese un número para calcular su factorial:"));
+            var resultado = 1;
+
+            if (isNaN(numero)) {
+                alert("Por favor, ingrese un número válido.");
+                return;
+            }
+
+            if (numero < 0) {
+                alert("El factorial no está definido para números negativos.");
+            } else {
+                if (numero > 1) {
+                    for (var i = numero; i >= 2; i--) {
+                        resultado *= i;
+                    }
+                }
+                alert("El factorial de " + numero + " es " + resultado);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Calculadora de Factorial</h1>
+    <button onclick="calcularFactorial()">Calcular Factorial</button>
+</body>
+</html>

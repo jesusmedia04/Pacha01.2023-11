@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Determinador de Número Primo</title>
+    <script>
+        function determinarPrimo() {
+            // Obtener el número ingresado por el usuario
+            var numero = parseInt(document.getElementById("numero").value);
+
+            // Inicializar la variable para determinar si es primo
+            var esPrimo = true;
+
+            // Verificar si el número es un entero positivo del 1 al 10
+            if (numero >= 1 && numero <= 10) {
+                // Verificar si el número es primo
+                for (var i = 2; i < numero; i++) {
+                    if (numero % i === 0) {
+                        esPrimo = false;
+                        break;
+                    }
+                }
+
+                // Mostrar el resultado
+                if (esPrimo) {
+                    document.getElementById("resultado").innerHTML = "El número " + numero + " es primo.";
+                } else {
+                    document.getElementById("resultado").innerHTML = "El número " + numero + " no es primo.";
+                }
+            } else {
+                document.getElementById("resultado").innerHTML = "El número ingresado no es válido. Debe ser un entero positivo del 1 al 10.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Determinador de Número Primo</h1>
+    <p>Ingrese un entero positivo del 1 al 10:</p>
+    <input type="text" id="numero" placeholder="Ingrese un número">
+    <button onclick="determinarPrimo()">Determinar Primo</button>
+    <p id="resultado"></p>
+</body>
+</html>

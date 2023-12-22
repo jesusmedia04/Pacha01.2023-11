@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conteo Regresivo</title>
+</head>
+<body>
+  <h1>Conteo Regresivo</h1>
+  <label for="inputNumber">Ingrese un número:</label>
+  <input type="number" id="inputNumber" placeholder="Ejemplo: 5" required>
+  <button onclick="generarConteoRegresivo()">Generar Conteo Regresivo</button>
+  <div id="resultado"></div>
+
+  <script>
+    function countdown(n) {
+      const result = [];
+      for (let i = n; i >= 0; i--) {
+        result.push(i);
+      }
+      return result;
+    }
+
+    function generarConteoRegresivo() {
+      const inputNumber = document.getElementById('inputNumber').value;
+      const number = parseInt(inputNumber);
+
+      if (isNaN(number)) {
+        alert('Por favor, ingrese un número válido.');
+        return;
+      }
+
+      const resultado = countdown(number);
+      document.getElementById('resultado').innerHTML = `
+        <p>El conteo regresivo desde ${number} hasta 0 es: [${resultado}]</p>
+      `;
+    }
+  </script>
+</body>
+</html>

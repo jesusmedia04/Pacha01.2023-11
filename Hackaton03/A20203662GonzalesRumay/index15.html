@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Unidades</title>
+    <script>
+        function convertirUnidades() {
+            // Obtener los valores ingresados por el usuario
+            var centimetros = parseFloat(document.getElementById("centimetros").value);
+            var libras = parseFloat(document.getElementById("libras").value);
+
+            // Definir las constantes de conversión
+            const CENTIMETROS_A_PULGADAS = 0.393701;
+            const LIBRAS_A_KILOGRAMOS = 0.453592;
+
+            // Realizar las conversiones
+            var pulgadas = centimetros * CENTIMETROS_A_PULGADAS;
+            var kilogramos = libras * LIBRAS_A_KILOGRAMOS;
+
+            // Mostrar los resultados
+            document.getElementById("resultados").innerHTML =
+                "Longitud en pulgadas: " + pulgadas.toFixed(2) + " in<br>" +
+                "Peso en kilogramos: " + kilogramos.toFixed(2) + " kg";
+        }
+    </script>
+</head>
+<body>
+    <h1>Conversor de Unidades</h1>
+    <p>Ingrese la longitud en centímetros:</p>
+    <input type="text" id="centimetros" placeholder="Ingrese la longitud en centímetros">
+    <p>Ingrese el peso en libras:</p>
+    <input type="text" id="libras" placeholder="Ingrese el peso en libras">
+    <button onclick="convertirUnidades()">Convertir Unidades</button>
+    <div id="resultados"></div>
+</body>
+</html>

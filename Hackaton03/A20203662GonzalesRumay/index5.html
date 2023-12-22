@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Descuentos</title>
+    <script>
+        function calcularDescuento() {
+            // Obtener la cantidad de zapatos ingresada por el usuario
+            var cantidadZapatos = parseInt(document.getElementById("cantidadZapatos").value);
+
+            // Definir el precio unitario y calcular el total de la compra
+            var precioUnitario = 80.0;
+            var totalCompra = cantidadZapatos * precioUnitario;
+
+            // Calcular el descuento según la cantidad de zapatos
+            var descuento = 0.0;
+            if (cantidadZapatos > 30) {
+                descuento = 0.4; // 40% de descuento
+            } else if (cantidadZapatos > 20) {
+                descuento = 0.2; // 20% de descuento
+            } else if (cantidadZapatos > 10) {
+                descuento = 0.1; // 10% de descuento
+            }
+
+            // Calcular el total con descuento
+            var totalConDescuento = totalCompra - (totalCompra * descuento);
+
+            // Mostrar los resultados
+            document.getElementById("resultados").innerHTML =
+                "Cantidad de zapatos: " + cantidadZapatos + "<br>" +
+                "Total de la compra: $" + totalCompra.toFixed(2) + "<br>" +
+                "Descuento aplicado: " + (descuento * 100) + "%<br>" +
+                "Total con descuento: $" + totalConDescuento.toFixed(2);
+        }
+    </script>
+</head>
+<body>
+    <h1>Calculadora de Descuentos</h1>
+    <p>Ingrese la cantidad de zapatos a comprar:</p>
+    <input type="text" id="cantidadZapatos" placeholder="Cantidad de zapatos">
+    <button onclick="calcularDescuento()">Calcular Descuento</button>
+    <div id="resultados"></div>
+</body>
+</html>

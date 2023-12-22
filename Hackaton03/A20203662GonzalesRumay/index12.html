@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Determinador del Número Mayor</title>
+    <script>
+        function determinarMayor() {
+            // Obtener los dos números ingresados por el usuario
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+
+            // Determinar el número mayor
+            var mayor;
+            if (num1 > num2) {
+                mayor = num1;
+            } else if (num2 > num1) {
+                mayor = num2;
+            } else {
+                mayor = "Los números son iguales";
+            }
+
+            // Mostrar el resultado
+            document.getElementById("resultado").innerHTML = "El número mayor es: " + mayor;
+        }
+    </script>
+</head>
+<body>
+    <h1>Determinador del Número Mayor</h1>
+    <p>Ingrese el primer número:</p>
+    <input type="text" id="num1" placeholder="Ingrese el primer número">
+    <p>Ingrese el segundo número:</p>
+    <input type="text" id="num2" placeholder="Ingrese el segundo número">
+    <button onclick="determinarMayor()">Determinar Mayor</button>
+    <p id="resultado"></p>
+</body>
+</html>

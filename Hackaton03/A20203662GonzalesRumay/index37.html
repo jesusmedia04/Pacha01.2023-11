@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máximo Común Divisor (MCD)</title>
+    <script>
+        function calcularMCD() {
+            var num1 = parseInt(prompt("Ingrese el primer número:"));
+            var num2 = parseInt(prompt("Ingrese el segundo número:"));
+            var resultado = document.getElementById("resultado");
+
+            while (num2 !== 0) {
+                var resto = num1 % num2;
+                num1 = num2;
+                num2 = resto;
+            }
+
+            var mcd = num1;
+            resultado.innerHTML = "El Máximo Común Divisor (MCD) de los dos números es: " + mcd;
+        }
+    </script>
+</head>
+<body>
+    <h1>Máximo Común Divisor (MCD)</h1>
+    <button onclick="calcularMCD()">Calcular MCD</button>
+    <div id="resultado"></div>
+</body>
+</html>

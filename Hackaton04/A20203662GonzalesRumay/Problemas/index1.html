@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suma de Dos Números</title>
+    <script>
+        function sumaDosNumeros(num1, num2) {
+            return num1 + num2;
+        }
+
+        function mostrarSuma() {
+            var numero1 = parseFloat(prompt("Ingrese el primer número:"));
+            var numero2 = parseFloat(prompt("Ingrese el segundo número:"));
+
+            if (!isNaN(numero1) && !isNaN(numero2)) {
+                var resultado = sumaDosNumeros(numero1, numero2);
+                alert("La suma de " + numero1 + " y " + numero2 + " es: " + resultado);
+            } else {
+                alert("Por favor, ingrese números válidos.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Suma de Dos Números</h1>
+    <button onclick="mostrarSuma()">Calcular Suma</button>
+</body>
+</html>

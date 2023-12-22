@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Suma</title>
+    <script>
+        function calcularSuma() {
+            // Obtener el valor ingresado por el usuario
+            var n = parseInt(document.getElementById("numero").value);
+
+            // Validar que el valor sea un número mayor que 0
+            if (Number.isInteger(n) && n > 0) {
+                // Calcular la suma de los primeros n números
+                var suma = 0;
+                var resultado = "Calculando la suma de los primeros " + n + " números...<br>";
+                for (var i = 1; i <= n; i++) {
+                    suma += i;
+                    resultado += "Sumando " + i + " - Suma parcial: " + suma + "<br>";
+                }
+
+                // Mostrar el resultado
+                resultado += "La suma total de los primeros " + n + " números es " + suma;
+                document.getElementById("resultado").innerHTML = resultado;
+            } else {
+                document.getElementById("resultado").innerHTML = "Error: Ingrese un número entero mayor que 0.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Calculadora de Suma</h1>
+    <p>Ingrese la cantidad de números para calcular la suma:</p>
+    <input type="text" id="numero" placeholder="Número">
+    <button onclick="calcularSuma()">Calcular Suma</button>
+    <div id="resultado"></div>
+</body>
+</html>

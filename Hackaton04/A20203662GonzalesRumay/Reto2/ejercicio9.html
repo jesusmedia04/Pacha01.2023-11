@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Índices del Carácter</title>
+</head>
+<body>
+  <h1>Resultado</h1>
+  <div id="resultado"></div>
+
+  <script>
+    function charIndex(palabra, caracter) {
+      const indices = [];
+      for (let i = 0; i < palabra.length; i++) {
+        if (palabra[i] === caracter) {
+          indices.push(i);
+        }
+      }
+      return indices;
+    }
+
+    const palabra1 = "hello";
+    const caracter1 = "l";
+    const indices1 = charIndex(palabra1, caracter1);
+
+    const palabra2 = "circumlocution";
+    const caracter2 = "c";
+    const indices2 = charIndex(palabra2, caracter2);
+
+    document.getElementById('resultado').innerHTML = `
+      <p>Para la palabra "${palabra1}" y el carácter "${caracter1}": ${JSON.stringify(indices1)}</p>
+      <p>Para la palabra "${palabra2}" y el carácter "${caracter2}": ${JSON.stringify(indices2)}</p>
+    `;
+  </script>
+</body>
+</html>

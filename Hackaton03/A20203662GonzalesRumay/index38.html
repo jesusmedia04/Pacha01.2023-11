@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Número Perfecto</title>
+    <script>
+        function verificarNumeroPerfecto() {
+            var numero = parseInt(prompt("Ingrese un número para verificar si es un número perfecto:"));
+            var sumaDivisores = 0;
+            var resultado = document.getElementById("resultado");
+
+            for (var i = 1; i <= numero / 2; i++) {
+                if (numero % i === 0) {
+                    sumaDivisores += i;
+                }
+            }
+
+            if (sumaDivisores === numero) {
+                resultado.innerHTML = "El número " + numero + " es un número perfecto.";
+            } else {
+                resultado.innerHTML = "El número " + numero + " no es un número perfecto.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Número Perfecto</h1>
+    <button onclick="verificarNumeroPerfecto()">Verificar Número Perfecto</button>
+    <div id="resultado"></div>
+</body>
+</html>
+

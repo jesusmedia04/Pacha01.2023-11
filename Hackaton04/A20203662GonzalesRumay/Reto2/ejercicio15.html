@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiplicar por Longitud</title>
+</head>
+<body>
+  <h1>Multiplicar por Longitud</h1>
+  <label for="inputArray">Ingrese una matriz (separada por comas):</label>
+  <input type="text" id="inputArray" placeholder="Ejemplo: 2, 3, 1, 0" required>
+  <button onclick="multiplicarPorLongitud()">Calcular</button>
+  <div id="resultado"></div>
+
+  <script>
+    function multiplyByLength(arr) {
+      return arr.map(value => value * arr.length);
+    }
+
+    function multiplicarPorLongitud() {
+      const inputArray = document.getElementById('inputArray').value;
+      const array = inputArray.split(',').map(Number);
+
+      if (array.some(isNaN)) {
+        alert('Por favor, ingrese valores numéricos separados por comas.');
+        return;
+      }
+
+      const resultado = multiplyByLength(array);
+      document.getElementById('resultado').innerHTML = `
+        <p>El resultado de multiplicar cada valor por la longitud de la matriz es: [${resultado}]</p>
+      `;
+    }
+  </script>
+</body>
+</html>

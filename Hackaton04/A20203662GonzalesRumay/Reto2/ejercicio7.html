@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formato de Número de Teléfono</title>
+</head>
+<body>
+  <h1>Resultado</h1>
+  <div id="resultado"></div>
+
+  <script>
+    function formatPhoneNumber(arrayNumeros) {
+      const parte1 = arrayNumeros.slice(0, 3).join('');
+      const parte2 = arrayNumeros.slice(3, 6).join('');
+      const parte3 = arrayNumeros.slice(6, 10).join('');
+      return `(${parte1}) ${parte2}-${parte3}`;
+    }
+
+    const numerosTelefono = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+    const resultadoTelefono = formatPhoneNumber(numerosTelefono);
+
+    // Mostrar el resultado en la página web
+    document.getElementById('resultado').innerHTML = `
+      <p>Array original: [${numerosTelefono.join(', ')}]</p>
+      <p>Número de teléfono: ${resultadoTelefono}</p>
+    `;
+  </script>
+</body>
+</html>

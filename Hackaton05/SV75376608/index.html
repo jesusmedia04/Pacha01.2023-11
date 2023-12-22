@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+    <title>Sistema de reparacion de celulares</title>
+</head>
+
+<body>
+
+    <div class="alert alert-warning display" role="alert" id="alert">
+       EL usuario debe autorizar la reparacion
+    </div>
+
+    <div class="container">
+        <div style="width: 80%; margin: 10px auto;">
+
+            <nav class="navbar bg-body-tertiary" >
+                <div class="container-fluid" >
+                  <h1>Sistema Reparacion de Celulares</h1>
+                </div>
+              </nav>
+
+            <form>
+                <div class="mb-3">
+                    <label for="" class="form-label">Numero de Serie</label>
+                    <input type="text" class="form-control" id="nro-serie" placeholder="Numero de serie">
+                </div>
+                <div class="mb-3">
+                    <label for="" class="form-label">IMEI</label>
+                    <input type="text" class="form-control" id="imei" placeholder="Numero de IMEI" >
+                </div>
+                <div class="mb-3">
+                    <label for="" class="form-label">Primer Diagnostico</label>
+                    <div class="form-floating">
+                        <textarea class="form-control" id="diagnostico"></textarea>
+                        <label for="floatingTextarea">Deja tu diagnostico</label>
+                    </div>
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="autorizacion">
+                    <label class="form-check-label" for="exampleCheck1">Autorizacion del usuario</label>
+                </div>
+                <div class="mb-3">
+                    <label for="" class="form-label">Habilidades del tecnico</label>
+                    <input type="text" class="form-control" id="skills" placeholder="Habilidades del tecnico">
+                </div>
+                <div class="mb-3">
+                    <label for="" class="form-label">Repuestos</label>
+                    <input type="text" class="form-control" id="repuestos" placeholder="Coloca los repuestos que se necesitaran">
+                </div>
+                <button type="button" id="btn-diagnosticar" class="btn btn-primary" >
+                    Diagnosticar
+                </button>
+            </form>
+
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog " >
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Diagnostico</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-floating" >
+                                <textarea class="form-control" id="resultado" style="height: 150px;"></textarea>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

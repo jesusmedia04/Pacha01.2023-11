@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Suma de Pares</title>
+    <script>
+        function calcularSumaPares() {
+            var limite = 1000;
+            var suma = 0;
+            var resultado = "Calculando la suma de los números pares hasta " + limite + "...<br>";
+
+            for (var i = 2; i <= limite; i += 2) {
+                suma += i;
+                resultado += "Sumando " + i + " - Suma parcial: " + suma + "<br>";
+            }
+
+            document.getElementById("resultado").innerHTML = resultado;
+        }
+    </script>
+</head>
+<body>
+    <h1>Calculadora de Suma de Pares</h1>
+    <button onclick="calcularSumaPares()">Calcular Suma de Pares</button>
+    <div id="resultado"></div>
+</body>
+</html>

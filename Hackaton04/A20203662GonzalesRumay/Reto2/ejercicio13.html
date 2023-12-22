@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objeto a Matriz</title>
+</head>
+<body>
+  <h1>Resultado</h1>
+  <div id="resultado"></div>
+
+  <script>
+    function objectToArray(objeto) {
+      return Object.entries(objeto);
+    }
+
+    const objetoEjemplo = {
+      likes: 2,
+      dislikes: 3,
+      followers: 10
+    };
+
+    const matrizResultado = objectToArray(objetoEjemplo);
+
+    document.getElementById('resultado').innerHTML = `
+      <p>Objeto: ${JSON.stringify(objetoEjemplo)}</p>
+      <p>Matriz: ${JSON.stringify(matrizResultado)}</p>
+    `;
+  </script>
+</body>
+</html>

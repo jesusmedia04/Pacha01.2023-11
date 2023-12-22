@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nombres de Estudiantes</title>
+</head>
+<body>
+  <h1>Resultado</h1>
+  <div id="resultado"></div>
+
+  <script>
+    function getStudentNames(estudiantes) {
+      return estudiantes.map(estudiante => estudiante.name);
+    }
+
+    const estudiantesEjemplo = [
+      { name: "Steve" },
+      { name: "Mike" },
+      { name: "John" }
+    ];
+
+    const nombresDeEstudiantes = getStudentNames(estudiantesEjemplo);
+
+    document.getElementById('resultado').innerHTML = `
+      <p>Estudiantes: ${JSON.stringify(estudiantesEjemplo)}</p>
+      <p>Nombres de estudiantes: ${JSON.stringify(nombresDeEstudiantes)}</p>
+    `;
+  </script>
+</body>
+</html>

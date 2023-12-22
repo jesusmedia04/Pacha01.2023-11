@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Carrito de Compras</h1>
+            <!-- Puedes agregar un menú de navegación si lo necesitas -->
+        </header>
+
+        <main>
+            <div class="row">
+                <!-- Columna para productos -->
+                <div class="col-md-8">
+                    <h2>Productos</h2>
+                    <!-- Aquí puedes mostrar una lista de productos -->
+                    
+                    <div class="row" id="productos">
+                       
+                    </div>
+                    <!-- Repite la estructura de la tarjeta para más productos -->
+                </div>
+
+                <!-- Columna para carrito -->
+                <div class="col-md-4">
+                    <h2>Carrito</h2>
+                    <ul class="list-group">
+                        <!-- Aquí se mostrarán los elementos agregados al carrito -->
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Producto 1
+                            <span class="badge badge-primary badge-pill">$XX.XX</span>
+                        </li>
+                        <!-- Repite la estructura para más elementos en el carrito -->
+                    </ul>
+                    <div class="text-center mt-3">
+                        <h5>Total: $XX.XX</h5>
+                        <a href="#" class="btn btn-success">Pagar</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="text-center mt-5">
+            <p>&copy; 2023 Nombre de tu Tienda</p>
+        </footer>
+    </div>
+
+    <!-- Scripts de Bootstrap y jQuery (puedes cambiar a tu versión preferida) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Otros scripts personalizados si los necesitas -->
+    <script src="script.js"></script>
+    <script>
+        Carrito.init({
+            Nombre: "Mi Tienda",
+            Ubicacion: "Lima"
+        })
+    </script>
+</body>
+
+</html>

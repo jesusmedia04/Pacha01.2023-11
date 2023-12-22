@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Hora</title>
+    <script>
+        function calcularHora() {
+            // Obtener los valores ingresados por el usuario
+            var hora = parseInt(document.getElementById("hora").value);
+            var minuto = parseInt(document.getElementById("minuto").value);
+            var segundo = parseInt(document.getElementById("segundo").value);
+
+            // Verificar la validez de la entrada de tiempo
+            if (hora >= 0 && hora <= 23 && minuto >= 0 && minuto <= 59 && segundo >= 0 && segundo <= 59) {
+                // Calcular la hora dentro de un segundo
+                segundo = segundo + 1;
+
+                // Ajustar los minutos y las horas si es necesario
+                if (segundo === 60) {
+                    segundo = 0;
+                    minuto = minuto + 1;
+
+                    if (minuto === 60) {
+                        minuto = 0;
+                        hora = hora + 1;
+
+                        if (hora === 24) {
+                            hora = 0; // Volver a 0 si se alcanzan las 24 horas
+                        }
+                    }
+                }
+
+                // Mostrar el resultado
+                document.getElementById("resultado").innerHTML = "La hora dentro de un segundo es: " + 
+                                                                  hora + ":" + (minuto < 10 ? "0" : "") + minuto + ":" + (segundo < 10 ? "0" : "") + segundo;
+            } else {
+                document.getElementById("resultado").innerHTML = "Entrada de tiempo no válida.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Calculadora de Hora</h1>
+    <p>Ingrese la hora (formato 24 horas):</p>
+    <input type="text" id="hora" placeholder="Ingrese la hora">
+    <p>Ingrese los minutos:</p>
+    <input type="text" id="minuto" placeholder="Ingrese los minutos">
+    <p>Ingrese los segundos:</p>
+    <input type="text" id="segundo" placeholder="Ingrese los segundos">
+    <button onclick="calcularHora()">Calcular Hora</button>
+    <p id="resultado"></p>
+</body>
+</html>

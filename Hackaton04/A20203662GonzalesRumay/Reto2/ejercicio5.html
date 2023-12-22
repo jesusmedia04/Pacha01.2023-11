@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filtrar Valores No Strings</title>
+</head>
+<body>
+  <h1>Resultados</h1>
+  <div id="resultados"></div>
+
+  <script>
+    function filtrarStrings(array) {
+      const strings = array.filter(valor => typeof valor === 'string');
+      return strings;
+    }
+
+    const valores = [1, 'Hola', true, 'Mundo', 42, 'JavaScript', null, undefined];
+    const stringsFiltrados = filtrarStrings(valores);
+
+    // Mostrar los resultados en la página web
+    document.getElementById('resultados').innerHTML = `
+      <p>Array original: [${valores.join(', ')}]</p>
+      <p>Strings filtrados: [${stringsFiltrados.join(', ')}]</p>
+    `;
+  </script>
+</body>
+</html>

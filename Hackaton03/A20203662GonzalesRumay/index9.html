@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Aumento Salarial</title>
+    <script>
+        function calcularAumentoSalarial() {
+            // Obtener el salario actual ingresado por el usuario
+            var salarioActual = parseFloat(document.getElementById("salarioActual").value);
+
+            // Calcular el nuevo salario con el aumento correspondiente
+            var nuevoSalario;
+            if (salarioActual > 2000.0) {
+                // Aumento del 5% para salarios mayores a $2000
+                nuevoSalario = salarioActual * 1.05;
+            } else {
+                // Aumento del 10% para salarios de $2000 o menos
+                nuevoSalario = salarioActual * 1.10;
+            }
+
+            // Mostrar los resultados
+            document.getElementById("resultados").innerHTML =
+                "Salario actual: $" + salarioActual.toFixed(2) + "<br>" +
+                "Nuevo salario con aumento: $" + nuevoSalario.toFixed(2);
+        }
+    </script>
+</head>
+<body>
+    <h1>Calculadora de Aumento Salarial</h1>
+    <p>Ingrese el salario actual del trabajador:</p>
+    <input type="text" id="salarioActual" placeholder="Salario actual">
+    <button onclick="calcularAumentoSalarial()">Calcular Aumento Salarial</button>
+    <div id="resultados"></div>
+</body>
+</html>

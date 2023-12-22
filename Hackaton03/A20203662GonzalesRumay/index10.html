@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Determinador de Números Par e Impar</title>
+    <script>
+        function determinarParImpar() {
+            // Obtener el número ingresado por el usuario
+            var numero = parseInt(document.getElementById("numero").value);
+
+            // Determinar si el número es par o impar
+            var resultado;
+            if (numero % 2 === 0) {
+                resultado = "El número " + numero + " es par.";
+            } else {
+                resultado = "El número " + numero + " es impar.";
+            }
+
+            // Mostrar el resultado
+            document.getElementById("resultado").innerHTML = resultado;
+        }
+    </script>
+</head>
+<body>
+    <h1>Determinador de Números Par e Impar</h1>
+    <p>Ingrese un número:</p>
+    <input type="text" id="numero" placeholder="Ingrese un número">
+    <button onclick="determinarParImpar()">Determinar Par o Impar</button>
+    <p id="resultado"></p>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suma de Cubos</title>
+    <script>
+        function sumOfCubes(...numeros) {
+            return numeros.reduce((suma, numero) => suma + Math.pow(numero, 3), 0);
+        }
+
+        function mostrarResultado() {
+            var entrada = prompt("Ingrese números separados por comas (por ejemplo, 1, 5, 9):");
+            var numeros = entrada.split(',').map(numero => parseFloat(numero.trim()));
+
+            if (numeros.every(numero => !isNaN(numero))) {
+                var resultado = sumOfCubes(...numeros);
+                alert("La suma de los cubos es: " + resultado);
+            } else {
+                alert("Por favor, ingrese números válidos separados por comas.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Suma de Cubos</h1>
+    <button onclick="mostrarResultado()">Calcular Suma de Cubos</button>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Número Mayor y Menor</title>
+    <script>
+        function encontrarMayorMenor() {
+            var mayor, menor;
+            
+            for (var i = 1; i <= 20; i++) {
+                var numero = parseFloat(prompt("Ingrese el número " + i + ":"));
+
+                if (i === 1) {
+                    mayor = numero;
+                    menor = numero;
+                } else {
+                    if (numero > mayor) {
+                        mayor = numero;
+                    }
+
+                    if (numero < menor) {
+                        menor = numero;
+                    }
+                }
+            }
+
+            alert("El número mayor es: " + mayor + "\nEl número menor es: " + menor);
+        }
+    </script>
+</head>
+<body>
+    <h1>Número Mayor y Menor</h1>
+    <button onclick="encontrarMayorMenor()">Encontrar Mayor y Menor</button>
+</body>
+</html>

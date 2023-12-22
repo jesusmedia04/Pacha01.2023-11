@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Último Dígito</title>
+    <script>
+        function verificarUltimoDigito() {
+            // Obtener el número ingresado por el usuario
+            var numero = document.getElementById("numero").value;
+
+            // Obtener el último dígito del número
+            var ultimoDigito = Math.abs(numero) % 10;
+
+            // Verificar si el último dígito es 4
+            if (ultimoDigito === 4) {
+                document.getElementById("resultado").innerHTML = "El número termina en 4.";
+            } else {
+                document.getElementById("resultado").innerHTML = "El número no termina en 4.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Verificador de Último Dígito</h1>
+    <p>Ingrese un número:</p>
+    <input type="text" id="numero" placeholder="Ingrese un número">
+    <button onclick="verificarUltimoDigito()">Verificar</button>
+    <p id="resultado"></p>
+</body>
+</html>

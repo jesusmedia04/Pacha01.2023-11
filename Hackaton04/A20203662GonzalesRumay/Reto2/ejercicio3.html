@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tipo de Valor</title>
+</head>
+<body>
+  <script>
+    // Definir la función para determinar el tipo de valor
+    function obtenerTipoDeValor() {
+      // Obtener el valor ingresado por el usuario
+      const valorIngresado = prompt("Ingrese un valor:");
+
+      // Intentar convertir el valor a un número
+      const numero = parseFloat(valorIngresado);
+
+      // Determinar el tipo de valor y mostrarlo
+      const tipoDeValor = isNaN(numero) ? typeof valorIngresado : typeof numero;
+      alert(`El tipo de valor ingresado es: ${tipoDeValor}`);
+    }
+
+    // Llamar a la función cuando se carga la página
+    obtenerTipoDeValor();
+  </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de CD's</title>
+    <script>
+        function calcularPrecioYGanancia() {
+            // Obtener la cantidad de CDs ingresada por el usuario
+            var cantidadCds = parseInt(document.getElementById("cantidadCds").value);
+
+            // Definir constantes
+            const PRECIO_UNIDAD_1 = 10;
+            const PRECIO_UNIDAD_2 = 8;
+            const PRECIO_UNIDAD_3 = 7;
+            const PRECIO_UNIDAD_4 = 6;
+            const GANANCIA_PORCENTAJE = 8.25 / 100;
+
+            // Definir variables
+            var precioUnitario, precioTotal, gananciaVendedor;
+
+            // Calcular el precio unitario según la cantidad de CDs
+            if (cantidadCds >= 1 && cantidadCds <= 9) {
+                precioUnitario = PRECIO_UNIDAD_1;
+            } else if (cantidadCds >= 10 && cantidadCds <= 99) {
+                precioUnitario = PRECIO_UNIDAD_2;
+            } else if (cantidadCds >= 100 && cantidadCds <= 499) {
+                precioUnitario = PRECIO_UNIDAD_3;
+            } else {
+                precioUnitario = PRECIO_UNIDAD_4;
+            }
+
+            // Calcular el precio total para el cliente y la ganancia para el vendedor
+            precioTotal = cantidadCds * precioUnitario;
+            gananciaVendedor = precioTotal * GANANCIA_PORCENTAJE;
+
+            // Mostrar los resultados
+            document.getElementById("resultado").innerHTML = "Precio total para el cliente: $" + precioTotal.toFixed(2) +
+                                                              "<br>Ganancia para el vendedor: $" + gananciaVendedor.toFixed(2);
+        }
+    </script>
+</head>
+<body>
+    <h1>Calculadora de CD's</h1>
+    <p>Ingrese la cantidad de CDs a vender:</p>
+    <input type="text" id="cantidadCds" placeholder="Ingrese la cantidad de CDs">
+    <button onclick="calcularPrecioYGanancia()">Calcular Precio y Ganancia</button>
+    <p id="resultado"></p>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convertir Objeto a Matriz</title>
+</head>
+<body>
+  <h1>Resultado</h1>
+  <div id="resultado"></div>
+
+  <script>
+    function objetoAMatriz(objeto) {
+      return Object.entries(objeto);
+    }
+
+    const objetoEjemplo = { a: 1, b: 2 };
+    const matrizResultado = objetoAMatriz(objetoEjemplo);
+
+    document.getElementById('resultado').innerHTML = `
+      <p>Objeto de entrada: ${JSON.stringify(objetoEjemplo)}</p>
+      <p>Matriz resultante: ${JSON.stringify(matrizResultado)}</p>
+    `;
+  </script>
+</body>
+</html>

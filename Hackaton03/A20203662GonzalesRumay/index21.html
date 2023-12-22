@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo del Factorial</title>
+    <script>
+        function calcularFactorial() {
+            // Obtener el valor ingresado por el usuario
+            var n = parseInt(document.getElementById("numero").value);
+
+            // Validar que el valor sea un número natural mayor que 0
+            if (Number.isInteger(n) && n >= 0) {
+                // Calcular el factorial
+                var fact = 1;
+                for (var i = 1; i <= n; i++) {
+                    fact *= i;
+                }
+
+                // Mostrar el resultado
+                document.getElementById("resultado").innerHTML = "El factorial de " + n + " es: " + fact;
+            } else {
+                document.getElementById("resultado").innerHTML = "Error: Ingrese un número natural mayor que 0.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Cálculo del Factorial</h1>
+    <p>Ingrese un número natural:</p>
+    <input type="text" id="numero" placeholder="Número">
+    <button onclick="calcularFactorial()">Calcular Factorial</button>
+    <div id="resultado"></div>
+</body>
+</html>
